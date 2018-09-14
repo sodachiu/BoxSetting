@@ -4,10 +4,9 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/button_store_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="存储信息"/>
+    <TextView
+        android:text="   存储信息"
+        style="@style/TitleStyle"
+        android:background="@drawable/background_title"/>
 
 </LinearLayout>

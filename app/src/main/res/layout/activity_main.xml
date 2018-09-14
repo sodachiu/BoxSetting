@@ -90,8 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="7.5"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:orientation="vertical">
 
         </FrameLayout>
 

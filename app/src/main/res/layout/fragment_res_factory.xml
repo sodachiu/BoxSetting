@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/button_res_factory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="恢复出厂设置"/>
+    <TextView
+        android:text="   恢复出厂设置"
+        style="@style/TitleStyle"
+        android:background="@drawable/background_title"/>
+
 </LinearLayout>
