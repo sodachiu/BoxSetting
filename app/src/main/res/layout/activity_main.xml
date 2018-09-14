@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:isIndicator="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="50dp"
+            android:text="设置"
+            android:textColor="#fff"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <!--主体部分-->
+    <LinearLayout
+        android:id="@+id/under_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.4"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/my_info"
+                style="@style/MenuStyle"
+                android:nextFocusUp="@id/res_factory"
+                android:text="关于本机" />
+
+            <TextView
+                android:id="@+id/net_setting"
+                style="@style/MenuStyle"
+                android:text="网络设置" />
+
+            <TextView
+                android:id="@+id/net_info"
+                style="@style/MenuStyle"
+                android:text="网络信息" />
+
+            <TextView
+                android:id="@+id/date_time"
+                style="@style/MenuStyle"
+                android:text="日期和时间" />
+
+            <TextView
+                android:id="@+id/display"
+                style="@style/MenuStyle"
+                android:text="显示" />
+
+            <TextView
+                android:id="@+id/store_info"
+                style="@style/MenuStyle"
+                android:text="存储信息" />
+
+            <TextView
+                android:id="@+id/advanced"
+                style="@style/MenuStyle"
+                android:text="高级设置" />
+
+            <TextView
+                android:id="@+id/res_factory"
+                style="@style/MenuStyle"
+                android:nextFocusDown="@id/my_info"
+                android:text="恢复出厂设置" />
+
+
+        </LinearLayout>
+
+        <!--放碎片的布局-->
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7.5"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

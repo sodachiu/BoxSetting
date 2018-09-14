@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MenuStyle">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/menu_focus_selector</item>
+    </style>
+
+    <style name="TitleStyle">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_width">900dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginTop">-30dp</item>
+
+    </style>
+
+
 </resources>
