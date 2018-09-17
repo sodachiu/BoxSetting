@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,8 +9,23 @@
         android:background="@drawable/background_title"/>
 
 
+    <LinearLayout
+        style="@style/LayoutStyle">
+
+        <TextView
+            android:background="#ada"
+            style="@style/LayoutTextViewStyle"
+            android:text="hello my info"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        style="@style/DividerStyle"
+        android:background="@drawable/background_divider"/>
+    
 
 
 
 
-</RelativeLayout>
+</LinearLayout>
