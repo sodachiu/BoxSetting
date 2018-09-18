@@ -3,9 +3,45 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--##########################设置分辨率部分###################################-->
     <TextView
-        android:text="   显示"
+        android:text="   设置分辨率"
         style="@style/TitleStyle"
         android:background="@drawable/background_title"/>
+
+
+
+    <LinearLayout
+        style="@style/LayoutStyle"
+        android:focusable="true"
+        android:id="@+id/set_resolution">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_weight="4"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="100dp"
+            android:text="分辨率" />
+
+    </LinearLayout>
+
+<!--##########################改变图像位置部分###################################-->
+    <TextView
+        android:text="   改变图像位置"
+        style="@style/TitleStyle"
+        android:background="@drawable/background_title"/>
+
+    <LinearLayout
+        style="@style/LayoutStyle"
+        android:focusable="true"
+        android:id="@+id/adjust_frame_output_region">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="100dp"
+            android:text="调整画面输出区域"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

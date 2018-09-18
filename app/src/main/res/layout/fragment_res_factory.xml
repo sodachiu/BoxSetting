@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,5 +9,36 @@
         android:text="   恢复出厂设置"
         style="@style/TitleStyle"
         android:background="@drawable/background_title"/>
+
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_width="wrap_content"
+            android:text="密码："/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:id="@+id/res_factory_pwd"
+            android:background="@drawable/editview_selector"
+            android:paddingLeft="10dp"
+            tools:ignore="Deprecated" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:textSize="22dp"
+        android:background="@drawable/button_selector"
+        android:id="@+id/res_factory_button"/>
 
 </LinearLayout>
