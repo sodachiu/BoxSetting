@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="   关于本机"
+        android:text="关于本机"
         style="@style/TitleStyle"
         android:background="@drawable/background_title"/>
 

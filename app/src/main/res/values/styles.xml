@@ -22,13 +22,13 @@
     </style>
 
     <style name="TitleStyle">
-        <item name="android:textSize">22dp</item>
+        <item name="android:textSize">23dp</item>
         <item name="android:textColor">#fee</item>
         <item name="android:layout_width">900dp</item>
         <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">40dp</item>
         <!--<item name="android:layout_gravity">center</item>-->
         <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginTop">5dp</item>
 
     </style>
@@ -36,7 +36,6 @@
     <style name="LayoutStyle">
         <item name="android:layout_height">45dp</item>
         <item name="android:layout_width">900dp</item>
-        <item name="android:layout_marginLeft">20dp</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:focusable">false</item>
         <item name="android:background">@drawable/content_focus_selector</item>
@@ -68,10 +67,26 @@
     </style>
 
     <style name="DividerStyle">
-        <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_width">900dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="RadioButtonStyle">
+
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">100dp</item>
+        <item name="android:textSize">23dp</item>
+        <item name="android:checked">true</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">23dp</item>
+        <item name="android:background">@drawable/button_selector</item>
+    </style>
 
 </resources>

@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LinearLayout menu = (LinearLayout)findViewById(R.id.menu);
-        MenuView menuView = new MenuView(menu, MainActivity.this);
+        MenuView menuView = new MenuView(menu, appCompatActivity);
+
 
     }
 

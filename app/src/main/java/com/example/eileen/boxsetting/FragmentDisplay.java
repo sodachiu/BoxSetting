@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class NetSettingFragment extends Fragment{
+public class FragmentDisplay extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.fragment_net_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_display, container,false);
         return view;
     }
-
 }

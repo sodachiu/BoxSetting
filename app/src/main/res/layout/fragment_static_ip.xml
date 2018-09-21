@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/test">
+
+    <TextView
+        android:text="有线静态"
+        style="@style/TitleStyle"
+        android:background="@drawable/background_title"/>
+
+    <LinearLayout
+        android:paddingLeft="20dp"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_width="wrap_content"
+            android:text="IP地址："/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/static_ip_addr"
+            android:background="@drawable/editview_selector"
+            android:nextFocusDown="@id/static_subnet_mask"
+            android:nextFocusUp="@id/static_ip_addr"
+            android:nextFocusLeft="@id/static_ip_addr"
+            android:nextFocusRight="@id/static_ip_addr"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="200dp"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_width="wrap_content"
+            android:text="子网掩码："/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/static_subnet_mask"
+            android:background="@drawable/editview_selector"
+            android:nextFocusDown="@id/static_default_gateway"
+            android:nextFocusUp="@id/static_ip_addr"
+            android:nextFocusLeft="@id/static_default_gateway"
+            android:nextFocusRight="@id/static_default_gateway"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="200dp"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_width="wrap_content"
+            android:text="默认网关："/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/static_default_gateway"
+            android:background="@drawable/editview_selector"
+            android:nextFocusDown="@id/static_main_DNS"
+            android:nextFocusUp="@id/static_subnet_mask"
+            android:nextFocusLeft="@id/static_default_gateway"
+            android:nextFocusRight="@id/static_default_gateway"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="200dp"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_width="wrap_content"
+            android:text="主用DNS："/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/static_main_DNS"
+            android:background="@drawable/editview_selector"
+            android:nextFocusDown="@id/static_backup_DNS"
+            android:nextFocusUp="@id/static_default_gateway"
+            android:nextFocusLeft="@id/static_main_DNS"
+            android:nextFocusRight="@id/static_main_DNS"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="200dp"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            style="@style/LayoutTagStyle"
+            android:layout_width="wrap_content"
+            android:text="备用DNS："/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/static_backup_DNS"
+            android:background="@drawable/editview_selector"
+            android:nextFocusDown="@id/static_ip_confirm"
+            android:nextFocusUp="@id/static_main_DNS"
+            android:nextFocusLeft="@id/static_backup_DNS"
+            android:nextFocusRight="@id/static_backup_DNS"
+            android:paddingLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="100dp"
+        android:layout_marginTop="10dp">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:text="确定"
+            android:nextFocusRight="@id/static_ip_cancel"
+            android:nextFocusDown="@id/static_ip_confirm"
+            android:nextFocusUp="@id/static_backup_DNS"
+            android:nextFocusLeft="@id/static_ip_confirm"
+            android:id="@+id/static_ip_confirm" />
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_marginLeft="20dp"
+            android:nextFocusLeft="@id/static_ip_confirm"
+            android:nextFocusUp="@id/static_backup_DNS"
+            android:nextFocusRight="@id/static_ip_cancel"
+            android:nextFocusDown="@id/static_ip_cancel"
+            android:text="取消"
+            android:id="@+id/static_ip_cancel" />
+
+    </LinearLayout>
+</LinearLayout>

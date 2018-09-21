@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ResFactoryFragment extends Fragment{
+public class FragmentResFactory extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,

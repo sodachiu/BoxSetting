@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 
 public class MenuView extends Activity implements View.OnFocusChangeListener{
-    private AppCompatActivity appAc;
+    private AppCompatActivity appCA;
     private static final String TAG = "MenuView";
     private ViewGroup viewGroup;
 
     public MenuView(ViewGroup parent, AppCompatActivity appCompatActivity){
 
-         appAc = appCompatActivity;
          viewGroup = parent;
+         appCA = appCompatActivity;
 
         TextView myInfo = (TextView) viewGroup.findViewById(R.id.my_info);
         TextView netSetting = (TextView) viewGroup.findViewById(R.id.net_setting);
@@ -42,34 +42,34 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
     @Override
     public void onFocusChange(View v, boolean hasFocus){
 
-        FragmentView fragmentView = new FragmentView(appAc);
+        FragmentView fragmentView = new FragmentView(appCA);
         v.setBackgroundResource(R.drawable.menu_focus_selector);
 
         if (hasFocus){
             switch (v.getId()){
                 case R.id.my_info:
-                    fragmentView.addFragment(new MyInfoFragment(), "my_info");
+                    fragmentView.repFragment(new FragmentMyInfo(), "my_info");
                     break;
                 case R.id.net_setting:
-                    fragmentView.addFragment(new NetSettingFragment(), "net_setting");
+                    fragmentView.repFragment(new FragmentNetSetting(), "net_setting");
                     break;
                 case R.id.net_info:
-                    fragmentView.addFragment(new NetInfoFragment(), "net_info");
+                    fragmentView.repFragment(new FragmentNetInfo(), "net_info");
                     break;
                 case R.id.date_time:
-                    fragmentView.addFragment(new DateTimeFragment(), "date_time");
+                    fragmentView.repFragment(new FragmentDateTime(), "date_time");
                     break;
                 case R.id.display:
-                    fragmentView.addFragment(new DisplayFragmnet(),"display");
+                    fragmentView.repFragment(new FragmentDisplay(),"display");
                     break;
                 case R.id.store_info:
-                    fragmentView.addFragment(new StoreInfoFragment(), "store_info");
+                    fragmentView.repFragment(new FragmentStoreInfo(), "store_info");
                     break;
                 case R.id.advanced:
-                    fragmentView.addFragment(new AdvancedFragment(), "advanced");
+                    fragmentView.repFragment(new FragmentAdvanced(), "advanced");
                     break;
                 case R.id.res_factory:
-                    fragmentView.addFragment(new ResFactoryFragment(), "res_factory");
+                    fragmentView.repFragment(new FragmentResFactory(), "res_factory");
                     break;
                 default:
                     break;
@@ -84,7 +84,6 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
             if (flag){
 
                 // 如果焦点还在menu布局内，清空回退栈，以便其它菜单项加入回退栈
-               fragmentView.removeFragment();
             }else{
 
                 //保留焦点位置focusLocation，背景改为浅色

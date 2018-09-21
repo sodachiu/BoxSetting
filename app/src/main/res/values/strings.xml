@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MySetting2</string>
+    <string name="app_name">BoxSetting</string>
+    <string name="dev_type">I\'m testing how to 动态赋值</string>
 </resources>
