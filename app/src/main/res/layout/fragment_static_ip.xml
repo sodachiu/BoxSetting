@@ -145,4 +145,6 @@
             android:id="@+id/static_ip_cancel" />
 
     </LinearLayout>
+
+
 </LinearLayout>

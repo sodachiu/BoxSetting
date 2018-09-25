@@ -3,8 +3,10 @@ package com.example.eileen.boxsetting;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,7 @@ import android.widget.LinearLayout;
 
 import static android.content.ContentValues.TAG;
 
-public class FragmentNetSetting extends Fragment implements View.OnClickListener{
+public class FragmentNetSetting extends Fragment implements View.OnClickListener, View.OnKeyListener{
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
@@ -35,6 +37,9 @@ public class FragmentNetSetting extends Fragment implements View.OnClickListener
         setNet.setOnClickListener(this);
         setBluttooth.setOnClickListener(this);
 
+        ViewGroup netSetting = (ViewGroup) getActivity().findViewById(R.id.net_setting_layout);
+        netSetting.setOnKeyListener(this);
+
 
     }
 
@@ -51,6 +56,16 @@ public class FragmentNetSetting extends Fragment implements View.OnClickListener
             default:
                 break;
         }
+    }
+
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        Log.d(TAG, "onKey: hello");
+
+        Log.d(TAG, "onKey: view" + v);
+        Log.d(TAG, "onKey: keyCode:" + keyCode);
+        Log.d(TAG, "onKey: event:" + event);
+        return false;
     }
 
 }

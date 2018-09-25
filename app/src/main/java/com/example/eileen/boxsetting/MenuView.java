@@ -13,6 +13,11 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
     private static final String TAG = "MenuView";
     private ViewGroup viewGroup;
 
+    /*
+    * ----为菜单项挨个设置焦点监听事件
+    *
+    * */
+
     public MenuView(ViewGroup parent, AppCompatActivity appCompatActivity){
 
          viewGroup = parent;
@@ -39,6 +44,13 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
 
     }
 
+
+    /*
+    * 判断焦点是否还在菜单上
+    * ----true:根据id动态加载右边碎片
+    * ----false: 记录焦点最后位置
+    *
+    * */
     @Override
     public void onFocusChange(View v, boolean hasFocus){
 
@@ -48,35 +60,33 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
         if (hasFocus){
             switch (v.getId()){
                 case R.id.my_info:
-                    fragmentView.repFragment(new FragmentMyInfo(), "my_info");
+                    fragmentView.addFragment(new FragmentMyInfo(), "my_info");
                     break;
                 case R.id.net_setting:
-                    fragmentView.repFragment(new FragmentNetSetting(), "net_setting");
+                    fragmentView.addFragment(new FragmentNetSetting(), "net_setting");
                     break;
                 case R.id.net_info:
-                    fragmentView.repFragment(new FragmentNetInfo(), "net_info");
+                    fragmentView.addFragment(new FragmentNetInfo(), "net_info");
                     break;
                 case R.id.date_time:
-                    fragmentView.repFragment(new FragmentDateTime(), "date_time");
+                    fragmentView.addFragment(new FragmentDateTime(), "date_time");
                     break;
                 case R.id.display:
-                    fragmentView.repFragment(new FragmentDisplay(),"display");
+                    fragmentView.addFragment(new FragmentDisplay(),"display");
                     break;
                 case R.id.store_info:
-                    fragmentView.repFragment(new FragmentStoreInfo(), "store_info");
+                    fragmentView.addFragment(new FragmentStoreInfo(), "store_info");
                     break;
                 case R.id.advanced:
-                    fragmentView.repFragment(new FragmentAdvanced(), "advanced");
+                    fragmentView.addFragment(new FragmentAdvanced(), "advanced");
                     break;
                 case R.id.res_factory:
-                    fragmentView.repFragment(new FragmentResFactory(), "res_factory");
+                    fragmentView.addFragment(new FragmentResFactory(), "res_factory");
                     break;
                 default:
                     break;
             }
         }else{
-
-
 
             boolean flag = menuItemIsFocused((TextView) v);
             Log.d(TAG, "onFocusChange: " + flag);
@@ -98,6 +108,7 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
     /*
     *
     * 判断menu布局内是否还有焦点
+    * ----当焦点变化时，判断上下item是否获得了焦点
     * */
 
     private boolean menuItemIsFocused(TextView nowItem) {

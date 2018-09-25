@@ -28,19 +28,6 @@ public class FragmentView {
 
     }
 
-    public void repFragment(Fragment fragment, String tag){
-        Log.d(TAG, "replaceFragmentCount: " + fragmentManager.getBackStackEntryCount());
-        if (fragmentManager.getBackStackEntryCount() > 0){
-            for (int i = 0; i < fragmentManager.getBackStackEntryCount(); i++){
-                fragmentManager.popBackStack();
-            }
-        }
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.content, fragment, tag);
-        transaction.addToBackStack(tag);
-        transaction.commit();
-
-    }
 
 
 }
