@@ -5,45 +5,107 @@
     android:background="@drawable/background_main"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:isIndicator="true">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="50dp"
-            android:text="设置"
-            android:textColor="#fff"
-            android:textSize="30dp" />
-
-    </LinearLayout>
+    <include layout="@layout/template_header" />
 
     <!--主体部分-->
     <LinearLayout
         android:id="@+id/under_header"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4.2"
-        android:orientation="horizontal">
+        style="@style/mainStyle">
 
         <!--引入menu布局-->
-        <include layout="@layout/layout_menu" />
+        <include layout="@layout/template_menu" />
 
         <!--放碎片的布局-->
-        <FrameLayout
-            android:id="@+id/content"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp">
+        <LinearLayout
+            style="@style/fragmentStyle"
+            android:id="@+id/layout_my_info">
 
-        </FrameLayout>
+            <TextView
+                android:text="关于本机"
+                style="@style/TitleStyle"
+                android:background="@drawable/background_title"/>
+
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="设备型号 ："/>
+                <TextView android:id="@+id/dev_type" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="软件版本 ："/>
+                <TextView android:id="@+id/software_version" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="安卓版本 ："/>
+                <TextView android:id="@+id/android_version" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="MAC地址 ："/>
+                <TextView android:id="@+id/mac_addr" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="STBID ："/>
+                <TextView android:id="@+id/stbid" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="认证业务主地址 ："/>
+                <TextView android:id="@+id/auth_main_addr" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="认证业务备地址 ："/>
+                <TextView android:id="@+id/auth_backup_addr" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="终端管理主地址 ："/>
+                <TextView android:id="@+id/terminal_main_addr" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="终端管理备地址 ："/>
+                <TextView android:id="@+id/terminal_backup_addr" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout style="@style/LayoutStyle" android:focusable="false">
+                <TextView style="@style/LayoutTagStyle" android:text="认证业务账号 ："/>
+                <TextView android:id="@+id/auth_account" style="@style/LayoutContentStyle" />
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+        </LinearLayout>
 
     </LinearLayout>
 

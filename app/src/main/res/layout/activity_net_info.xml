@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    android:orientation="vertical">
+
+    <include layout="@layout/template_header" />
+
+    <!--主体部分-->
+    <LinearLayout
+        android:id="@+id/under_header"
+        style="@style/mainStyle">
+
+        <!--引入menu布局-->
+        <include layout="@layout/template_menu" />
+
+        <LinearLayout
+            style="@style/fragmentStyle"
+            android:id="@+id/layout_net_info">
+
+            <TextView
+                android:text="   网络信息"
+                style="@style/TitleStyle"
+                android:background="@drawable/background_title"/>
+
+            <LinearLayout
+                style="@style/LayoutStyle">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="IP地址："/>
+                <TextView
+                    android:text=""
+                    style="@style/LayoutContentStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/ip_addr"/>
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+
+            <LinearLayout
+                style="@style/LayoutStyle">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="子网掩码："/>
+                <TextView
+                    android:text=""
+                    style="@style/LayoutContentStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/subnet_mask"/>
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout
+                style="@style/LayoutStyle">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="默认网关："/>
+                <TextView
+                    android:text=""
+                    style="@style/LayoutContentStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/default_gateway"/>
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout
+                style="@style/LayoutStyle">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="主用DNS："/>
+                <EditText
+                    android:text=""
+                    style="@style/LayoutContentStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:background="@null"
+                    android:id="@+id/main_dns"/>
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout
+                style="@style/LayoutStyle">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="备用DNS："/>
+                <EditText
+                    android:text=""
+                    style="@style/LayoutContentStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:background="@null"
+                    android:id="@+id/backup_dns"/>
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

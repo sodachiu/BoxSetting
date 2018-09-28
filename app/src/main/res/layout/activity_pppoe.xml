@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    android:orientation="vertical">
+
+    <!--header部分-->
+    <include layout="@layout/template_header" />
+
+    <LinearLayout
+        android:id="@+id/under_header"
+        style="@style/mainStyle">
+
+        <!--引入menu布局-->
+        <include layout="@layout/template_menu" />
+
+        <LinearLayout
+            style="@style/fragmentStyle"
+            android:id="@+id/layout_pppoe">
+
+            <TextView
+                style="@style/TitleStyle"
+                android:text="有线PPPoE"/>
+
+            <LinearLayout
+                style="@style/staticIpLinearLayoutStyle"
+                android:layout_marginTop="80dp">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="250dp"
+                    android:text="用户名："/>
+                <EditText
+                    style="@style/editViewStyle"
+                    android:id="@+id/pppoe_username" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/staticIpLinearLayoutStyle"
+                android:layout_marginTop="50dp">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:layout_width="250dp"
+                    android:text="密码："/>
+                <EditText
+                    style="@style/editViewStyle"
+                    android:inputType="numberPassword"
+                    android:id="@+id/pppoe_password" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/staticIpLinearLayoutStyle"
+                android:layout_marginTop="50dp"
+                android:gravity="center_vertical|right">
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:text="确定"
+                    android:id="@+id/pppoe_confirm" />
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_marginLeft="20dp"
+                    android:text="取消"
+                    android:id="@+id/pppoe_cancel" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

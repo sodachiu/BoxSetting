@@ -9,12 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NetSettingActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".WireSettingActivity" />
+        <activity android:name=".BluetoothSettingActivity" />
+        <activity android:name=".NetInfoActivity" />
+        <activity android:name=".PPPoEActivity" />
+        <activity android:name=".StaticIpActivity" />
+        <activity android:name=".DateTimeActivity" />
+        <activity android:name=".DateFormatActivity" />
+        <activity android:name=".DisplayActivity" />
+        <activity android:name=".ResolutionActivity" />
+        <activity android:name=".OutputRegionActivity" />
+        <activity android:name=".StoreInfoActivity" />
+        <activity android:name=".DevDialogActivity"
+            android:theme="@style/dialogStyle"/>
+        <activity android:name=".ResFactoryDialogActivity" />
+        <activity android:name=".ResolutionDialogActivity"></activity>
     </application>
 
 </manifest>

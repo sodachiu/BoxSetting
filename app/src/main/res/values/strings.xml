@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">BoxSetting</string>
     <string name="dev_type">I\'m testing how to 动态赋值</string>
+    <string name="title_activity_bluetooth_setting">BluetoothSettingActivity</string>
+
+    <!--以下是关于 dialog activity 中的所有文本信息-->
+    <!-- dialog activity 中标题文本-->
+    <string name="dialog_title">信息</string>
+    <!--卸载存储设备提示信息-->
+    <string name="uninstall_dev_prompt_text">存储设备将要被卸载</string>
+
+    <!--以下是所有 button 文本信息-->
+    <string name="button_confirm">确定</string>
+    <string name="button_cancel">取消</string>
+
+
 </resources>
+
+

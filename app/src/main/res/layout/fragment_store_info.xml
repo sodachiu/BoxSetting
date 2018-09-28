@@ -5,7 +5,7 @@
 
 
     <TextView
-        android:text="   存储信息"
+        android:text="存储信息"
         style="@style/TitleStyle"
         android:background="@drawable/background_title"/>
 

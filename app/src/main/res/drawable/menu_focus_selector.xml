@@ -3,4 +3,6 @@
 
     <item android:drawable="@drawable/menu_item_focus"
         android:state_focused="true"/>
+    <item android:drawable="@drawable/menu_item_select"
+        android:state_focused="false" />
 </selector>
