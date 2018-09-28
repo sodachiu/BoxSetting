@@ -99,6 +99,8 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
                 //保留焦点位置focusLocation，背景改为浅色
                 TextView focusLocation = (TextView) v;
                 focusLocation.setBackgroundResource(R.drawable.menu_item_select);
+
+
             }
         }
 
@@ -155,8 +157,6 @@ public class MenuView extends Activity implements View.OnFocusChangeListener{
                 nextItem = null;
                 preItem = null;
                 break;
-
-
         }
 
         return (nextItem.isFocused() || preItem.isFocused());
