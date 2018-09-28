@@ -1,6 +1,7 @@
 package com.example.eileen.boxsetting;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,10 +27,18 @@ public class DevDialogActivity extends Activity
 
     @Override
     public void onClick(View v){
-        boolean flag = false;
         switch (v.getId()){
             case R.id.button_uninstall_confirm:
-
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
+                finish();
+                break;
+            case R.id.button_uninstall_cancel:
+                setResult(RESULT_CANCELED);
+                finish();
+                break;
+            default:
+                break;
 
         }
     }
