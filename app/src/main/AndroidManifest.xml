@@ -32,10 +32,16 @@
         <activity android:name=".ResolutionActivity" />
         <activity android:name=".OutputRegionActivity" />
         <activity android:name=".StoreInfoActivity" />
-        <activity android:name=".DevDialogActivity"
+        <activity
+            android:name=".DevDialogActivity"
+            android:theme="@style/dialogStyle" />
+        <activity android:name=".ResFactoryDialogActivity"
             android:theme="@style/dialogStyle"/>
-        <activity android:name=".ResFactoryDialogActivity" />
-        <activity android:name=".ResolutionDialogActivity"></activity>
+        <activity android:name=".ResolutionDialogActivity" />
+        <activity android:name=".AdvancedActivity" />
+        <activity android:name=".ResFactoryActivity" />
+        <activity android:name=".AdvancedItemActivity" />
+        <activity android:name=".ClearAllActivity"></activity>
     </application>
 
 </manifest>

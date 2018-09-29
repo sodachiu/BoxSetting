@@ -47,6 +47,23 @@ public class StoreInfoActivity extends AppCompatActivity
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event){
+
+        if (event.getAction() == KeyEvent.ACTION_DOWN){
+            Intent intent;
+            switch (keyCode){
+                case KeyEvent.KEYCODE_DPAD_DOWN:
+                    intent = new Intent(StoreInfoActivity.this, AdvancedActivity.class);
+                    startActivity(intent);
+                    break;
+                case KeyEvent.KEYCODE_DPAD_UP:
+                    uninstallDev.setFocusable(false);
+                    intent = new Intent(StoreInfoActivity.this, DisplayActivity.class);
+                    startActivity(intent);
+                    break;
+                default:
+                    break;
+            }
+        }
         return false;
     }
 

@@ -6,6 +6,7 @@ import android.util.Log;
 
 public class ReturnDataUtil {
     private static final int STORE_INFO = 100;
+    private static final int RES_FACTORY = 99;
     private static final String TAG = "ReturnDataUtil";
     private static AppCompatActivity activity = ActiveActivity.getActiveActivity();
     private static int ok = activity.RESULT_OK;
@@ -15,10 +16,16 @@ public class ReturnDataUtil {
             case STORE_INFO:
                 if (resultCode == ok){
                     //做确定处理
-                    Log.d(TAG, "onActivityResult: " + ok);
+                    Log.d(TAG, "onActivityResult: store_info 确定" + ok);
                 }else{
-                    Log.d(TAG, "onActivityResult: " + cancel);
-                    Log.d(TAG, "onActivityResult: 返回码错误" );
+                    Log.d(TAG, "onActivityResult: store_info 取消" + cancel);
+                }
+                break;
+            case RES_FACTORY:
+                if (resultCode == ok){
+                    Log.d(TAG, "disposeOfData: res_factory 确定" + ok);
+                }else{
+                    Log.d(TAG, "disposeOfData: res_factory 取消" + cancel);
                 }
                 break;
 

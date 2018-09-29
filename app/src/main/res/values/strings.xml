@@ -13,7 +13,11 @@
     <string name="button_confirm">确定</string>
     <string name="button_cancel">取消</string>
 
+    <!--密码输入错误的提示文本-->
+    <string name="text_wrong_pwd">您输入的密码有误</string>
 
+    <!--高级设置->一键清理下的可清理垃圾文本-->
+    <string name="alternative_to_clear">可清理垃圾：20.00KB</string>
 </resources>
 
 

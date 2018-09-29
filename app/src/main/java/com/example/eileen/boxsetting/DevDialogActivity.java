@@ -29,8 +29,7 @@ public class DevDialogActivity extends Activity
     public void onClick(View v){
         switch (v.getId()){
             case R.id.button_uninstall_confirm:
-                Intent intent = new Intent();
-                setResult(RESULT_OK, intent);
+                setResult(RESULT_OK);
                 finish();
                 break;
             case R.id.button_uninstall_cancel:

@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ResFactoryDialogActivity">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="600dp"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:background="@drawable/background_dialog">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        style="@style/dialogTextStyle"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="35dp"
+        android:text="@string/dialog_title" />
+
+    <LinearLayout
+        style="@style/dialogLinearLayoutContentStyle"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
+        <TextView
+            style="@style/dialogTextStyle"
+            android:layout_marginTop="10dp"
+            android:text="这将清除内存所有数据，包括："/>
+        <TextView
+            style="@style/dialogTextStyle"
+            android:layout_marginTop="10dp"
+            android:text="·你的账户"/>
+        <TextView
+            style="@style/dialogTextStyle"
+            android:text="·系统和应用程序的数据和设置" />
+        <TextView
+                style="@style/dialogTextStyle"
+                android:text="·下载的应用"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/dialogLinearLayoutButtonStyle">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/button_confirm"
+            android:id="@+id/button_res_confirm"/>
+
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/button_cancel"
+            android:id="@+id/button_res_cancel"/>
+    </LinearLayout>
+
+</LinearLayout>
