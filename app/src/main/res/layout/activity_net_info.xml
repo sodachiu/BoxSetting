@@ -20,7 +20,7 @@
             android:id="@+id/layout_net_info">
 
             <TextView
-                android:text="   网络信息"
+                android:text="@string/network_information"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -30,7 +30,7 @@
                     style="@style/LayoutTagStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="IP地址："/>
+                    android:text="@string/ip_address"/>
                 <TextView
                     android:text=""
                     style="@style/LayoutContentStyle"
@@ -49,7 +49,7 @@
                     style="@style/LayoutTagStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="子网掩码："/>
+                    android:text="@string/subnet_mask"/>
                 <TextView
                     android:text=""
                     style="@style/LayoutContentStyle"
@@ -67,7 +67,7 @@
                     style="@style/LayoutTagStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="默认网关："/>
+                    android:text="@string/default_gateway"/>
                 <TextView
                     android:text=""
                     style="@style/LayoutContentStyle"
@@ -85,7 +85,7 @@
                     style="@style/LayoutTagStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="主用DNS："/>
+                    android:text="@string/main_dns"/>
                 <EditText
                     android:text=""
                     style="@style/LayoutContentStyle"
@@ -105,7 +105,7 @@
                     style="@style/LayoutTagStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="备用DNS："/>
+                    android:text="@string/backup_dns"/>
                 <EditText
                     android:text=""
                     style="@style/LayoutContentStyle"

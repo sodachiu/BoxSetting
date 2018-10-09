@@ -21,7 +21,7 @@
             android:id="@+id/layout_net_setting">
 
             <TextView
-                android:text="网络设置"
+                android:text="@string/set_network"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -33,9 +33,9 @@
                     style="@style/LayoutTagStyle"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="有线网络设置"/>
+                    android:text="@string/set_ethernet"/>
                 <TextView
-                    android:text="设置和管理有线网络"
+                    android:text="@string/manage_ethernet"
                     style="@style/LayoutContentStyle" />
             </LinearLayout>
             <ImageView
@@ -50,7 +50,7 @@
                     style="@style/LayoutTagStyle"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="设置蓝牙"/>
+                    android:text="@string/set_bluetooth"/>
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"

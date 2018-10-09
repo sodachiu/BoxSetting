@@ -20,7 +20,7 @@
             android:id="@+id/layout_bluetooth">
 
             <TextView
-                android:text="高级设置"
+                android:text="@string/advanced"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -35,11 +35,11 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical|start"
                     android:paddingStart="100dp"
-                    android:text="一键清理" />
+                    android:text="@string/one_click_clean" />
             </LinearLayout>
 
             <TextView
-                android:text="休眠功能设置"
+                android:text="@string/set_sleep_function"
                 style="@style/TitleStyle"
                 android:paddingLeft="40dp"
                 android:background="@drawable/background_title"/>
@@ -54,7 +54,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical|left"
                     android:paddingLeft="100dp"
-                    android:text="电视机待机后，5分钟后机顶盒自动待机" />
+                    android:text="@string/minutes_to_sleep" />
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical|left"
                     android:paddingLeft="100dp"
-                    android:text="无遥控操作，4小时后机顶盒自动待机" />
+                    android:text="@string/hours_to_sleep" />
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"

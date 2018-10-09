@@ -20,7 +20,7 @@
             android:id="@+id/layout_static_ip">
 
             <TextView
-                android:text="有线静态"
+                android:text="@string/static_ip_title"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -30,7 +30,7 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_width="wrap_content"
-                    android:text="IP地址：" />
+                    android:text="@string/ip_address" />
                 <EditText
                     style="@style/editViewStyle"
                     android:id="@+id/static_ip_addr" />
@@ -42,7 +42,7 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_width="wrap_content"
-                    android:text="子网掩码："/>
+                    android:text="@string/subnet_mask"/>
                 <EditText
                     style="@style/editViewStyle"
                     android:id="@+id/static_subnet_mask"/>
@@ -54,7 +54,7 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_width="wrap_content"
-                    android:text="默认网关："/>
+                    android:text="@string/default_gateway"/>
                 <EditText
                     style="@style/editViewStyle"
                     android:id="@+id/static_default_gateway" />
@@ -66,7 +66,7 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_width="wrap_content"
-                    android:text="主用DNS："/>
+                    android:text="@string/main_dns"/>
                 <EditText
                     style="@style/editViewStyle"
                     android:id="@+id/static_main_DNS" />
@@ -78,7 +78,7 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_width="wrap_content"
-                    android:text="备用DNS："/>
+                    android:text="@string/backup_dns"/>
                 <EditText
                     style="@style/editViewStyle"
                     android:id="@+id/static_backup_DNS"/>
@@ -87,18 +87,18 @@
 
             <LinearLayout
                 style="@style/staticIpLinearLayoutStyle"
-                android:gravity="center_vertical|right">
+                android:gravity="center_vertical|end">
 
                 <Button
                     style="@style/ButtonStyle"
-                    android:text="确定"
+                    android:text="@string/button_confirm"
 
                     android:id="@+id/static_ip_confirm" />
                 <Button
                     style="@style/ButtonStyle"
                     android:layout_marginLeft="20dp"
 
-                    android:text="取消"
+                    android:text="@string/button_cancel"
                     android:id="@+id/static_ip_cancel" />
 
             </LinearLayout>

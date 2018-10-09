@@ -4,49 +4,49 @@
     android:layout_width="0dp"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:gravity="right"
+    android:gravity="end"
     android:id="@+id/menu">
 
 
     <TextView
         android:id="@+id/my_info"
         style="@style/menuStyle"
-        android:text="关于本机" />
+        android:text="@string/about_this_machine" />
 
     <TextView
         android:id="@+id/net_setting"
         style="@style/menuStyle"
-        android:text="网络设置" />
+        android:text="@string/set_network" />
 
     <TextView
         android:id="@+id/net_info"
         style="@style/menuStyle"
-        android:text="网络信息" />
+        android:text="@string/network_information" />
 
     <TextView
         android:id="@+id/date_time"
         style="@style/menuStyle"
-        android:text="日期和时间" />
+        android:text="@string/date_and_time" />
 
     <TextView
         android:id="@+id/display"
         style="@style/menuStyle"
-        android:text="显示" />
+        android:text="@string/display" />
 
     <TextView
         android:id="@+id/store_info"
         style="@style/menuStyle"
-        android:text="存储信息" />
+        android:text="@string/store_information" />
 
     <TextView
         android:id="@+id/advanced"
         style="@style/menuStyle"
-        android:text="高级设置" />
+        android:text="@string/advanced" />
 
     <TextView
         android:id="@+id/res_factory"
         style="@style/menuStyle"
-        android:text="恢复出厂设置" />
+        android:text="@string/restore_factory" />
 
 
 

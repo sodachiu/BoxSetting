@@ -20,7 +20,7 @@
             android:id="@+id/layout_resolution">
 
             <TextView
-                android:text="设置分辨率"
+                android:text="@string/set_resolution"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 

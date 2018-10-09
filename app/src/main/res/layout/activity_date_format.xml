@@ -20,7 +20,7 @@
             android:id="@+id/layout_date_format">
 
             <TextView
-                android:text="选择日期格式"
+                android:text="@string/select_date_format"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -33,7 +33,7 @@
                 <TextClock
                     style="@style/LayoutTagStyle"
                     android:layout_weight="1"
-                    android:gravity="center_vertical|left"
+                    android:gravity="center_vertical|start"
                     android:paddingLeft="100dp"
                     android:format12Hour="区域(yyyy-M-dd)"
                     android:format24Hour="区域(yyyy-M-dd)"/>
@@ -58,7 +58,7 @@
                 <TextClock
                     style="@style/LayoutTagStyle"
                     android:layout_weight="1"
-                    android:gravity="center_vertical|left"
+                    android:gravity="center_vertical|start"
                     android:paddingLeft="100dp"
                     android:format12Hour="MM-dd-yyyy"
                     android:format24Hour="MM-dd-yyyy"/>
@@ -83,7 +83,7 @@
                 <TextClock
                     style="@style/LayoutTagStyle"
                     android:layout_weight="1"
-                    android:gravity="center_vertical|left"
+                    android:gravity="center_vertical|start"
                     android:paddingLeft="100dp"
                     android:format12Hour="dd-MM-yyyy"
                     android:format24Hour="dd-MM-yyyy"/>
@@ -108,7 +108,7 @@
                 <TextClock
                     style="@style/LayoutTagStyle"
                     android:layout_weight="1"
-                    android:gravity="center_vertical|left"
+                    android:gravity="center_vertical|start"
                     android:paddingLeft="100dp"
                     android:format12Hour="yyyy-MM-dd"
                     android:format24Hour="yyyy-MM-dd"/>

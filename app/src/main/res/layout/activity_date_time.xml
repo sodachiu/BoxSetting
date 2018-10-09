@@ -21,7 +21,7 @@
 
             <!--##########################设置日期和时间UI################################-->
             <TextView
-                android:text="   设置日期和时间"
+                android:text="@string/set_date_and_time"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -35,7 +35,7 @@
                     android:layout_weight="4"
                     android:gravity="center_vertical|left"
                     android:layout_marginLeft="100dp"
-                    android:text="使用24小时格式"/>
+                    android:text="@string/use_24hours_format"/>
                 <TextClock
                     style="@style/LayoutContentStyle"
                     android:layout_weight="4"
@@ -66,9 +66,9 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="4"
-                    android:gravity="center_vertical|left"
+                    android:gravity="center_vertical|start"
                     android:layout_marginLeft="100dp"
-                    android:text="选择日期格式"/>
+                    android:text="@string/select_date_format"/>
                 <TextClock
                     style="@style/LayoutContentStyle"
                     android:layout_weight="4"
@@ -87,7 +87,7 @@
 
             <!--##########################时间服务器设置UI################################-->
             <TextView
-                android:text="   时间服务器设置"
+                android:text="@string/set_time_server"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -97,9 +97,9 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="4"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="主时间同步服务器地址"/>
+                    android:text="@string/main_time_server_address"/>
 
                 <TextView
                     style="@style/LayoutContentStyle"
@@ -119,9 +119,9 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="4"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="备时间同步服务器地址"/>
+                    android:text="@string/backup_time_server_address"/>
 
                 <TextView
                     style="@style/LayoutContentStyle"

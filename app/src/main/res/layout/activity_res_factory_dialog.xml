@@ -10,7 +10,7 @@
         style="@style/dialogTextStyle"
         android:layout_marginTop="50dp"
         android:layout_marginStart="35dp"
-        android:text="@string/dialog_title" />
+        android:text="@string/information" />
 
     <LinearLayout
         style="@style/dialogLinearLayoutContentStyle"
@@ -19,17 +19,17 @@
         <TextView
             style="@style/dialogTextStyle"
             android:layout_marginTop="10dp"
-            android:text="这将清除内存所有数据，包括："/>
+            android:text="@string/res_factory_prompt_text"/>
         <TextView
             style="@style/dialogTextStyle"
             android:layout_marginTop="10dp"
-            android:text="·你的账户"/>
+            android:text="@string/res_factory_prompt_list1"/>
         <TextView
             style="@style/dialogTextStyle"
-            android:text="·系统和应用程序的数据和设置" />
+            android:text="@string/res_factory_prompt_list2" />
         <TextView
                 style="@style/dialogTextStyle"
-                android:text="·下载的应用"/>
+                android:text="@string/res_factory_prompt_list3"/>
 
     </LinearLayout>
 

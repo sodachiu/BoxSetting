@@ -21,7 +21,7 @@
 
             <!--##########################设置分辨率部分###################################-->
             <TextView
-                android:text="设置分辨率"
+                android:text="@string/set_resolution"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -34,15 +34,15 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="4"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="分辨率" />
+                    android:text="@string/resolution" />
 
             </LinearLayout>
 
             <!--##########################改变图像位置部分###################################-->
             <TextView
-                android:text="改变图像位置"
+                android:text="@string/change_image_position"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -52,9 +52,9 @@
                 android:id="@+id/adjust_frame_output_region">
                 <TextView
                     style="@style/LayoutTagStyle"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="调整画面输出区域"/>
+                    android:text="@string/adjust_screen_output_region"/>
 
             </LinearLayout>
         </LinearLayout>

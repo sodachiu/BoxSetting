@@ -20,7 +20,7 @@
             android:id="@+id/layout_store_info">
 
             <TextView
-                android:text="存储信息"
+                android:text="@string/store_information"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -30,20 +30,20 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="3.5"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="总容量" />
+                    android:text="@string/total_capacity" />
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="1.5"
-                    android:gravity="left|center_vertical"
-                    android:text="5.0GB"
+                    android:gravity="start|center_vertical"
+                    android:text=""
                     android:id="@+id/total_space"/>
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="5"
-                    android:gravity="left|center_vertical"
-                    android:text="存储设备个数1"
+                    android:gravity="start|center_vertical"
+                    android:text=""
                     android:id="@+id/store_dev_num"/>
 
             </LinearLayout>
@@ -57,20 +57,20 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="3.5"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="可用空间" />
+                    android:text="@string/remaining_capacity" />
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="1.5"
-                    android:gravity="left|center_vertical"
-                    android:text="5.0GB"
+                    android:gravity="start|center_vertical"
+                    android:text=""
                     android:id="@+id/alternative_space"/>
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="5"
-                    android:gravity="left|center_vertical"
-                    android:text="存储设备个数1" />
+                    android:gravity="start|center_vertical"
+                    android:text="" />
 
             </LinearLayout>
             <ImageView
@@ -83,9 +83,9 @@
                 android:id="@+id/uninstall_out_store_dev">
                 <TextView
                     style="@style/LayoutTagStyle"
-                    android:gravity="left|center_vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="卸载外部存储设备" />
+                    android:text="@string/uninstall_outside_devices" />
 
             </LinearLayout>
             <ImageView

@@ -20,7 +20,7 @@
             android:id="@+id/layout_advanced">
 
             <TextView
-                android:text="高级设置"
+                android:text="@string/advanced"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -32,7 +32,7 @@
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_width="wrap_content"
-                    android:text="密码："/>
+                    android:text="@string/password"/>
                 <EditText
                     style="@style/editViewStyle"
                     android:inputType="numberPassword"

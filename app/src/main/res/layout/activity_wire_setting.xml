@@ -21,7 +21,7 @@
             android:id="@+id/layout_wire_setting">
 
             <TextView
-                android:text="   有线网络设置"
+                android:text="@string/set_ethernet"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
@@ -31,7 +31,7 @@
                 android:id="@+id/pppoe_container">
                 <RadioButton
                     style="@style/RadioButtonStyle"
-                    android:text="PPPoE"
+                    android:text="@string/set_pppoe"
                     android:id="@+id/pppoe_radiobutton"/>
                 <TextView
                     style="@style/LayoutContentStyle"
@@ -49,7 +49,7 @@
                 android:id="@+id/dhcp_container">
                 <RadioButton
                     style="@style/RadioButtonStyle"
-                    android:text="DHCP"
+                    android:text="@string/set_dhcp"
                     android:id="@+id/dhcp_radiobutton"/>
                 <TextView
                     style="@style/LayoutContentStyle"
@@ -67,7 +67,7 @@
                 android:id="@+id/static_ip_container">
                 <RadioButton
                     style="@style/RadioButtonStyle"
-                    android:text="静态IP"
+                    android:text="@string/set_static_ip"
                     android:id="@+id/static_ip_radiobutton"/>
                 <TextView
                     style="@style/LayoutContentStyle"

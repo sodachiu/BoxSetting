@@ -19,6 +19,6 @@
         android:textSize="23dp"
         android:textColor="#fff"
         android:textAlignment="center"
-        android:text="请按上/下/左/右键调整画面输出区域，按返回键退出（注：请确保边框在可见区域内）"/>
+        android:text="@string/adjust_region_prompt_text"/>
 
 </LinearLayout>
