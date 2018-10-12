@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.security.Key;
-
 public class AdvancedActivity extends AppCompatActivity
         implements View.OnClickListener, View.OnKeyListener{
 
@@ -45,6 +43,11 @@ public class AdvancedActivity extends AppCompatActivity
         password.setFocusable(true);
         confirm.setFocusable(true);
         promptInfo.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
     }
 
     @Override
@@ -86,5 +89,7 @@ public class AdvancedActivity extends AppCompatActivity
         }
         return false;
     }
+
+
 
 }

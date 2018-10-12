@@ -16,6 +16,14 @@ buildscript {
 }
 
 allprojects {
+
+    gradle.projectsEvaluated {
+        //preBuild.dependsOn(pushDownJdkDependency)
+        tasks.withType(JavaCompile){
+            options.compilerArgs.add('-Xbootclasspath/p:app/libs/hi3798mv300_framework_base.jar')
+//记得修改getwifimesseage和hisi3798mv100base
+        }
+    }
     repositories {
         google()
         jcenter()

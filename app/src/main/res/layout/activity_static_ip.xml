@@ -33,7 +33,7 @@
                     android:text="@string/ip_address" />
                 <EditText
                     style="@style/editViewStyle"
-                    android:id="@+id/static_ip_addr" />
+                    android:id="@+id/ip_addr" />
 
             </LinearLayout>
 

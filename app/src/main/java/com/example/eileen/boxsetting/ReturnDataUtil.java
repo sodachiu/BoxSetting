@@ -1,5 +1,6 @@
 package com.example.eileen.boxsetting;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,7 +9,8 @@ public class ReturnDataUtil {
     private static final int STORE_INFO = 100;
     private static final int RES_FACTORY = 99;
     private static final String TAG = "ReturnDataUtil";
-    private static AppCompatActivity activity = ActiveActivity.getActiveActivity();
+
+    private static Activity activity = ActivityCollector.getTopActivity();
     private static int ok = activity.RESULT_OK;
     private static int cancel = activity.RESULT_CANCELED;
     public static void disposeOfData(int requestCode, int resultCode, Intent data){

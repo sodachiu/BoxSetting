@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/layout_res_factory">
 
     <!--header部分-->
     <include layout="@layout/template_header" />
@@ -16,8 +17,7 @@
         <include layout="@layout/template_menu" />
 
         <LinearLayout
-            style="@style/fragmentStyle"
-            android:id="@+id/layout_res_factory">
+            style="@style/fragmentStyle">
 
             <TextView
                 android:text="@string/restore_factory"

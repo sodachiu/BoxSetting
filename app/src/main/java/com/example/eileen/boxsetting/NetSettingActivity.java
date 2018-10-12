@@ -3,6 +3,7 @@ package com.example.eileen.boxsetting;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 public class NetSettingActivity extends AppCompatActivity
         implements View.OnClickListener, View.OnKeyListener{
+
+    private static final String TAG = "NetSettingActivity";
     private TextView netSetting;
     private LinearLayout setNet;
     private LinearLayout setBluetooth;
@@ -30,6 +33,11 @@ public class NetSettingActivity extends AppCompatActivity
         setBluetooth.setOnClickListener(this);
         netSetting.setOnKeyListener(this);
 
+        //測試了一下NetworkInformation類是否可用
+        /*NetworkInformation information = new NetworkInformation(getApplicationContext());
+        Log.d(TAG, "onCreate: " + information.getIpAddress());*/
+
+
     }
 
     @Override
@@ -37,6 +45,11 @@ public class NetSettingActivity extends AppCompatActivity
         super.onResume();
         setNet.setFocusable(true);
         setBluetooth.setFocusable(true);
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
     }
 
     @Override

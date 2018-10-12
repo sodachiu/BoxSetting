@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">BoxSetting</string>
-    <string name="header_text">设置</string>
+    <string name="header_text">设置_qiu</string>
 
 
     <!--程序中通用的一些文本-->
@@ -9,6 +9,7 @@
     <string name="button_confirm">确定</string>
     <string name="button_cancel">取消</string>
     <string name="text_wrong_pwd">您输入的密码有误</string>
+    <string name="net_default_text">0.0.0.0</string>
 
     <!--######################菜单中的文本信息#########################-->
     <string name="about_this_machine">关于本机</string>

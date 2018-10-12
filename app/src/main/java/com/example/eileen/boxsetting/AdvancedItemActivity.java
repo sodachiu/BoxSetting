@@ -1,15 +1,19 @@
 package com.example.eileen.boxsetting;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class AdvancedItemActivity extends AppCompatActivity
-        implements View.OnClickListener{
+        implements View.OnClickListener {
 
     private static final String TAG = "AdvancedItemActivity";
     private TextView advanced;
@@ -32,8 +36,8 @@ public class AdvancedItemActivity extends AppCompatActivity
     }
 
     @Override
-    public void onClick(View v){
-        switch (v.getId()){
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.clear_all:
                 Intent intent = new Intent(AdvancedItemActivity.this, ClearAllActivity.class);
                 startActivity(intent);
@@ -50,5 +54,4 @@ public class AdvancedItemActivity extends AppCompatActivity
                 break;
         }
     }
-
 }

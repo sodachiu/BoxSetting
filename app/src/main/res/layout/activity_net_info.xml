@@ -32,7 +32,7 @@
                     android:layout_weight="1"
                     android:text="@string/ip_address"/>
                 <TextView
-                    android:text=""
+                    android:text="@string/net_default_text"
                     style="@style/LayoutContentStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -51,11 +51,11 @@
                     android:layout_weight="1"
                     android:text="@string/subnet_mask"/>
                 <TextView
-                    android:text=""
+                    android:text="@string/net_default_text"
                     style="@style/LayoutContentStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/subnet_mask"/>
+                    android:id="@+id/net_mask"/>
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"
@@ -68,12 +68,13 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:text="@string/default_gateway"/>
+
                 <TextView
-                    android:text=""
+                    android:text="@string/net_default_text"
                     style="@style/LayoutContentStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:id="@+id/default_gateway"/>
+                    android:id="@+id/gateway"/>
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"
@@ -87,13 +88,13 @@
                     android:layout_weight="1"
                     android:text="@string/main_dns"/>
                 <EditText
-                    android:text=""
+                    android:text="@string/net_default_text"
                     style="@style/LayoutContentStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:focusable="true"
                     android:background="@null"
-                    android:id="@+id/main_dns"/>
+                    android:id="@+id/dns1"/>
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"
@@ -107,13 +108,13 @@
                     android:layout_weight="1"
                     android:text="@string/backup_dns"/>
                 <EditText
-                    android:text=""
+                    android:text="@string/net_default_text"
                     style="@style/LayoutContentStyle"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:focusable="true"
                     android:background="@null"
-                    android:id="@+id/backup_dns"/>
+                    android:id="@+id/dns2"/>
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"

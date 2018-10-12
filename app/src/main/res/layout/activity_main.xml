@@ -28,7 +28,7 @@
 
             <LinearLayout style="@style/LayoutStyle" android:focusable="false">
                 <TextView style="@style/LayoutTagStyle" android:text="@string/machine_type"/>
-                <TextView android:id="@+id/dev_type" style="@style/LayoutContentStyle" />
+                <TextView android:id="@+id/dev_model" style="@style/LayoutContentStyle" />
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"
@@ -36,7 +36,7 @@
 
             <LinearLayout style="@style/LayoutStyle" android:focusable="false">
                 <TextView style="@style/LayoutTagStyle" android:text="@string/software_release"/>
-                <TextView android:id="@+id/software_version" style="@style/LayoutContentStyle" />
+                <TextView android:id="@+id/software_release" style="@style/LayoutContentStyle" />
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"
@@ -44,7 +44,7 @@
 
             <LinearLayout style="@style/LayoutStyle" android:focusable="false">
                 <TextView style="@style/LayoutTagStyle" android:text="@string/android_release"/>
-                <TextView android:id="@+id/android_version" style="@style/LayoutContentStyle" />
+                <TextView android:id="@+id/android_release" style="@style/LayoutContentStyle" />
             </LinearLayout>
             <ImageView
                 style="@style/DividerStyle"

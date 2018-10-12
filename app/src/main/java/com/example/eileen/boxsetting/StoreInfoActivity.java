@@ -27,11 +27,18 @@ public class StoreInfoActivity extends AppCompatActivity
         storeInfo.setBackgroundResource(R.drawable.menu_focus_selector);
         storeInfo.setOnKeyListener(this);
         uninstallDev.setOnClickListener(this);
+
     }
 
+    @Override
     protected void onResume(){
         super.onResume();
         uninstallDev.setFocusable(true);
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
     }
 
     @Override

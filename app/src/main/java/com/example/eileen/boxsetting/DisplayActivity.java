@@ -28,12 +28,19 @@ public class DisplayActivity extends AppCompatActivity
         setResolution.setOnClickListener(this);
         adjustRegion.setOnClickListener(this);
 
+
     }
 
+    @Override
     protected void onResume(){
         super.onResume();
         setResolution.setFocusable(true);
         adjustRegion.setFocusable(true);
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
     }
 
     @Override
