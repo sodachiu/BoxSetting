@@ -17,7 +17,7 @@ public class WireSettingActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wire_setting);
+        setContentView(R.layout.ethernet_activity);
         netSetting = (TextView) findViewById(R.id.net_setting);
         pppoe = (LinearLayout) findViewById(R.id.pppoe_container);
         dhcp = (LinearLayout) findViewById(R.id.dhcp_container);

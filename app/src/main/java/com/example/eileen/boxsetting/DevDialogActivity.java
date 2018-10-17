@@ -1,8 +1,6 @@
 package com.example.eileen.boxsetting;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +13,7 @@ public class DevDialogActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dev_dialog);
+        setContentView(R.layout.uninstall_dialog);
 
         confirm = (Button) findViewById(R.id.button_uninstall_confirm);
         cancel = (Button) findViewById(R.id.button_uninstall_cancel);

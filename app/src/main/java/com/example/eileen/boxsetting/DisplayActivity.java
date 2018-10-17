@@ -17,7 +17,7 @@ public class DisplayActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display);
+        setContentView(R.layout.display_activity);
         display = (TextView) findViewById(R.id.display);
         setResolution = (LinearLayout) findViewById(R.id.set_resolution);
         adjustRegion = (LinearLayout) findViewById(R.id.adjust_frame_output_region);

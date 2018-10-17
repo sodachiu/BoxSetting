@@ -1,7 +1,6 @@
 package com.example.eileen.boxsetting;
 
 import android.content.Intent;
-import android.os.RecoverySystem;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -23,7 +22,7 @@ public class ResFactoryActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_res_factory);
+        setContentView(R.layout.recovery_system_activity);
         resFactory = (TextView) findViewById(R.id.res_factory);
         password = (EditText) findViewById(R.id.res_factory_pwd);
         confirm = (Button) findViewById(R.id.button_res_factory);

@@ -5,7 +5,7 @@
     android:background="@drawable/background_main"
     android:orientation="vertical">
 
-    <include layout="@layout/template_header" />
+    <include layout="@layout/header_include" />
 
     <!--主体部分-->
     <LinearLayout
@@ -13,7 +13,7 @@
         style="@style/mainStyle">
 
         <!--引入menu布局-->
-        <include layout="@layout/template_menu" />
+        <include layout="@layout/menu_include" />
 
         <!--放碎片的布局-->
         <LinearLayout

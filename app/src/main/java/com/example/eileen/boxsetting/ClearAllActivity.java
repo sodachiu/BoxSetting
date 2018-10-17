@@ -16,7 +16,7 @@ public class ClearAllActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clear_all);
+        setContentView(R.layout.wipe_cache_activity);
         advanced = (TextView) findViewById(R.id.advanced);
         clearAll = (Button) findViewById(R.id.button_clear_all);
         advanced.setBackgroundResource(R.drawable.menu_item_select);

@@ -25,19 +25,14 @@ public class NetInfoActivity extends AppCompatActivity implements View.OnKeyList
     private TextView gateway;
     private EditText dns1;
     private EditText dns2;
-    private IntentFilter intentFilter;
     private NetworkChangeReceiver networkChangeReceiver;
 
-    private String mIpAddress;
-    private String mNetMask;
-    private String mGateway;
-    private String mDns1;
-    private String mDns2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_net_info);
+        setContentView(R.layout.net_info_activity);
 
         netInfo = (TextView) findViewById(R.id.net_info);
         ipAddress = (TextView) findViewById(R.id.ip_addr);
@@ -50,7 +45,7 @@ public class NetInfoActivity extends AppCompatActivity implements View.OnKeyList
         netInfo.setBackgroundResource(R.drawable.menu_focus_selector);
         netInfo.setOnKeyListener(this);
 
-        intentFilter = new IntentFilter();
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(EthernetManager.ETHERNET_STATE_CHANGED_ACTION);
         intentFilter.addAction(EthernetManager.NETWORK_STATE_CHANGED_ACTION);
         networkChangeReceiver = new NetworkChangeReceiver();
@@ -99,13 +94,21 @@ public class NetInfoActivity extends AppCompatActivity implements View.OnKeyList
     }
 
     class NetworkChangeReceiver extends BroadcastReceiver{
+        private DhcpInfo dhcpInfo;
+        private String mIpAddress;
+        private String mNetMask;
+        private String mGateway;
+        private String mDns1;
+        private String mDns2;
         @Override
         public void onReceive(Context context, Intent intent) {
             EthernetManager ethManager = (EthernetManager)context.getSystemService(
                     Context.ETHERNET_SERVICE);
-            DhcpInfo dhcpInfo = ethManager.getDhcpInfo();
+
 //            Log.d(TAG, "onReceive: " + ethManager.getNetLinkStatus());
             if (ethManager.getNetLinkStatus()){
+
+                dhcpInfo = ethManager.getDhcpInfo();
                 mIpAddress = NetworkUtils.intToInetAddress(dhcpInfo.ipAddress).getHostAddress();
                 mNetMask = NetworkUtils.intToInetAddress(dhcpInfo.netmask).getHostAddress();
                 mGateway = NetworkUtils.intToInetAddress(dhcpInfo.gateway).getHostAddress();
@@ -117,7 +120,6 @@ public class NetInfoActivity extends AppCompatActivity implements View.OnKeyList
                 gateway.setText(mGateway);
                 dns1.setText(mDns1);
                 dns2.setText(mDns2);
-
             }else {
                 ipAddress.setText(R.string.net_default_text);
                 netMask.setText(R.string.net_default_text);

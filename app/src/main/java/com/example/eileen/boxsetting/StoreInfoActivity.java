@@ -3,7 +3,6 @@ package com.example.eileen.boxsetting;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -19,7 +18,7 @@ public class StoreInfoActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_info);
+        setContentView(R.layout.store_info_activity);
         storeInfo = (TextView) findViewById(R.id.store_info);
         uninstallDev = (LinearLayout) findViewById(R.id.uninstall_out_store_dev);
 

@@ -8,6 +8,6 @@ public class OutputRegionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_output_region);
+        setContentView(R.layout.output_region_activity);
     }
 }

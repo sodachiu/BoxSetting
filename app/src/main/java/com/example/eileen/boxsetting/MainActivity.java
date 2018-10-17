@@ -2,7 +2,6 @@ package com.example.eileen.boxsetting;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Network;
 import android.net.NetworkUtils;
 import android.net.ethernet.EthernetManager;
 import android.os.Build;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
 
         TextView myInfo = (TextView) findViewById(R.id.my_info);
         TextView deviceModel = (TextView) findViewById(R.id.dev_model);

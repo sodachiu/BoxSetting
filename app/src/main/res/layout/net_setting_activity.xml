@@ -5,58 +5,56 @@
     android:background="@drawable/background_main"
     android:orientation="vertical">
 
-    <!--header部分-->
-    <include layout="@layout/template_header" />
+    <include layout="@layout/header_include" />
 
+    <!--主体部分-->
     <LinearLayout
         android:id="@+id/under_header"
         style="@style/mainStyle">
 
         <!--引入menu布局-->
-        <include layout="@layout/template_menu" />
+        <include layout="@layout/menu_include" />
 
+        <!--放碎片的布局-->
         <LinearLayout
             style="@style/fragmentStyle"
-            android:id="@+id/layout_display">
+            android:id="@+id/layout_net_setting">
 
-            <!--##########################设置分辨率部分###################################-->
             <TextView
-                android:text="@string/set_resolution"
-                style="@style/TitleStyle"
-                android:background="@drawable/background_title"/>
-
-
-
-            <LinearLayout
-                style="@style/LayoutStyle"
-                android:focusable="true"
-                android:id="@+id/set_resolution">
-                <TextView
-                    style="@style/LayoutTagStyle"
-                    android:layout_weight="4"
-                    android:gravity="start|center_vertical"
-                    android:layout_marginLeft="100dp"
-                    android:text="@string/resolution" />
-
-            </LinearLayout>
-
-            <!--##########################改变图像位置部分###################################-->
-            <TextView
-                android:text="@string/change_image_position"
+                android:text="@string/set_network"
                 style="@style/TitleStyle"
                 android:background="@drawable/background_title"/>
 
             <LinearLayout
                 style="@style/LayoutStyle"
                 android:focusable="true"
-                android:id="@+id/adjust_frame_output_region">
+                android:id="@+id/set_net">
                 <TextView
                     style="@style/LayoutTagStyle"
-                    android:gravity="start|center_vertical"
+                    android:gravity="center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:text="@string/adjust_screen_output_region"/>
-
+                    android:text="@string/set_ethernet"/>
+                <TextView
+                    android:text="@string/manage_ethernet"
+                    style="@style/LayoutContentStyle" />
             </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
+
+            <LinearLayout
+                style="@style/LayoutStyle"
+                android:focusable="true"
+                android:id="@+id/set_bluetooth">
+                <TextView
+                    style="@style/LayoutTagStyle"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="100dp"
+                    android:text="@string/set_bluetooth"/>
+            </LinearLayout>
+            <ImageView
+                style="@style/DividerStyle"
+                android:background="@drawable/background_divider"/>
         </LinearLayout>
 
     </LinearLayout>

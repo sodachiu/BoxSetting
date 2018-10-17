@@ -6,14 +6,14 @@
     android:orientation="vertical">
 
     <!--header部分-->
-    <include layout="@layout/template_header" />
+    <include layout="@layout/header_include" />
 
     <LinearLayout
         android:id="@+id/under_header"
         style="@style/mainStyle">
 
         <!--引入menu布局-->
-        <include layout="@layout/template_menu" />
+        <include layout="@layout/menu_include" />
 
         <LinearLayout
             style="@style/fragmentStyle"

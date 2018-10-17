@@ -10,7 +10,7 @@ public class ResolutionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resolution);
+        setContentView(R.layout.resolution_activity);
         display = (TextView) findViewById(R.id.display);
         display.setBackgroundResource(R.drawable.menu_item_select);
     }

@@ -105,10 +105,9 @@
         <activity android:name=".AdvancedActivity" />
         <activity android:name=".ResFactoryActivity" />
         <activity android:name=".AdvancedItemActivity" />
-        <activity android:name=".ClearAllActivity"></activity>
+        <activity android:name=".ClearAllActivity" />
+        <service android:name=".PppoeConnectService" />
     </application>
 
 
-
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

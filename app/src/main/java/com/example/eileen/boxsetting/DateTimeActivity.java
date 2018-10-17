@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextClock;
 import android.widget.TextView;
@@ -28,7 +26,7 @@ implements View.OnKeyListener, View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_date_time);
+        setContentView(R.layout.date_time_activity);
         dateTime = (TextView) findViewById(R.id.date_time);
         timeFormat = (LinearLayout) findViewById(R.id.time_format);
         dateFormat = (LinearLayout) findViewById(R.id.date_format);

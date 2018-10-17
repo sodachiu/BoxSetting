@@ -3,7 +3,6 @@ package com.example.eileen.boxsetting;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -21,7 +20,7 @@ public class NetSettingActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_net_setting);
+        setContentView(R.layout.net_setting_activity);
 
         netSetting = (TextView) findViewById(R.id.net_setting);
         setNet = (LinearLayout) findViewById(R.id.set_net);

@@ -3,6 +3,7 @@
     <string name="header_text">设置_qiu</string>
 
 
+    <string name="pppoe_local_broadcast">com.example.boxsetting.PPPOE_LOCAL_BROADCAST</string>
     <!--程序中通用的一些文本-->
     <string name="password">密码：</string>
     <string name="information">信息：</string>
