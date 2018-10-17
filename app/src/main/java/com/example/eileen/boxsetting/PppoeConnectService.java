@@ -45,10 +45,10 @@ public class PppoeConnectService extends Service {
     }
 
     class PppoeConnectBinder extends Binder{
-        public void connect(String username, String pswd){
+        public void connect(Context context){
             if (pppoeConnectTask == null){
                 pppoeConnectTask = new PppoeConnectTask(listener);
-                pppoeConnectTask.execute(username, pswd);
+                pppoeConnectTask.execute(context);
                 Toast.makeText(PppoeConnectService.this,
                         "正在连接",
                         Toast.LENGTH_SHORT).show();
