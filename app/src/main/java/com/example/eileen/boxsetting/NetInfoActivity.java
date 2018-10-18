@@ -105,8 +105,10 @@ public class NetInfoActivity extends AppCompatActivity implements View.OnKeyList
             EthernetManager ethManager = (EthernetManager)context.getSystemService(
                     Context.ETHERNET_SERVICE);
 
+            int ethStatus = intent.getIntExtra(EthernetManager.EXTRA_ETHERNET_STATE, -1);
+            Log.d(TAG, "onReceive: ");
 //            Log.d(TAG, "onReceive: " + ethManager.getNetLinkStatus());
-            if (ethManager.getNetLinkStatus()){
+            if (EthernetManager.EVENT_DHCP_CONNECT_SUCCESSED == ethStatus){
 
                 dhcpInfo = ethManager.getDhcpInfo();
                 mIpAddress = NetworkUtils.intToInetAddress(dhcpInfo.ipAddress).getHostAddress();

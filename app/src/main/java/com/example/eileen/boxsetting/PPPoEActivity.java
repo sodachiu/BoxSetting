@@ -1,12 +1,15 @@
 package com.example.eileen.boxsetting;
 
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.net.DhcpInfo;
 import android.net.ethernet.EthernetManager;
 import android.net.pppoe.PppoeManager;
+import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +23,18 @@ import android.widget.Toast;
 /**/
 public class PPPoEActivity extends AppCompatActivity
         implements View.OnClickListener{
+    private PppoeConnectService.PppoeConnectBinder mBinder;
+    private ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mBinder = (PppoeConnectService.PppoeConnectBinder) service;
+        }
 
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
     private static final String TAG = "PPPoEActivity";
     private static final String PPPOE_LOCAL_BROADCAST = "com.example.eileen.boxsetting.PPPOE_LOCAL_BROADCAST";
     private TextView tvNetSetting;
@@ -41,6 +55,7 @@ public class PPPoEActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pppoe_activity);
         Context context = getApplicationContext();
+
         pppoeManager = (PppoeManager) context.getSystemService(
                 Context.PPPOE_SERVICE);
         ethernetManager = (EthernetManager) context.getSystemService(
@@ -57,12 +72,14 @@ public class PPPoEActivity extends AppCompatActivity
         btnConfirm.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
 
+        Intent intent = new Intent(PPPoEActivity.this, PppoeConnectService.class);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(PppoeManager.PPPOE_STATE_CHANGED_ACTION);
         intentFilter.addAction(PPPOE_LOCAL_BROADCAST);
         pppoeChangeReceiver = new PppoeChangeReceiver();
         this.registerReceiver(pppoeChangeReceiver, intentFilter);
-
+        startService(intent);
+        bindService(intent, connection, BIND_AUTO_CREATE);
     }
 
     @Override
@@ -78,11 +95,11 @@ public class PPPoEActivity extends AppCompatActivity
             if (intent.getAction().equals(PPPOE_LOCAL_BROADCAST)){
                 int ethState = ethernetManager.getNetLinkStatus(ifaceName);
                 int pppoeState = pppoeManager.getPppoeState();
-                Toast.makeText(
+                /*Toast.makeText(
                         PPPoEActivity.this,
                         "net state " + pppoeManager.getPppoeMode(),
                         Toast.LENGTH_SHORT
-                ).show();
+                ).show();*/
             }else if (intent.getAction().equals(PppoeManager.PPPOE_STATE_CHANGED_ACTION)){
                 Toast.makeText(
                         PPPoEActivity.this,
@@ -112,18 +129,14 @@ public class PPPoEActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v){
+
         switch (v.getId()){
             case R.id.pppoe_btn_confirm:
-                /*String user = etUsername.getText().toString();
-                String pwd = etPassword.getText().toString();
-                Log.d(TAG, "pppoeConnect: hello");
-                pppoeManager.connect(user, pwd, ifaceName);*/
-                Intent intentService = new Intent(this, PppoeConnectService.class);
+
                 Intent intentBroadcast = new Intent(PPPOE_LOCAL_BROADCAST);
                 sendBroadcast(intentBroadcast);
-                intentService.putExtra("username", etUsername.getText().toString());
-                intentService.putExtra("pwd", etPassword.getText().toString());
-                startService(intentService);
+                mBinder.connect(PPPoEActivity.this);
+
                 break;
             case R.id.pppoe_btn_cancel:
                 break;
@@ -131,10 +144,5 @@ public class PPPoEActivity extends AppCompatActivity
                 break;
         }
     }
-/*
-    public void pppoeConnect(){
-
-
-    }*/
 
 }

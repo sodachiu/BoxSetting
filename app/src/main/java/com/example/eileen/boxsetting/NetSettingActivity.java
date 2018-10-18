@@ -12,9 +12,9 @@ public class NetSettingActivity extends AppCompatActivity
         implements View.OnClickListener, View.OnKeyListener{
 
     private static final String TAG = "NetSettingActivity";
-    private TextView netSetting;
-    private LinearLayout setNet;
-    private LinearLayout setBluetooth;
+    private TextView tvNetSetting;
+    private LinearLayout llSetNet;
+    private LinearLayout llSetBluetooth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,15 @@ public class NetSettingActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.net_setting_activity);
 
-        netSetting = (TextView) findViewById(R.id.net_setting);
-        setNet = (LinearLayout) findViewById(R.id.set_net);
-        setBluetooth = (LinearLayout) findViewById(R.id.set_bluetooth);
+        tvNetSetting = (TextView) findViewById(R.id.net_setting);
+        llSetNet = (LinearLayout) findViewById(R.id.set_net);
+        llSetBluetooth = (LinearLayout) findViewById(R.id.set_bluetooth);
 
-        netSetting.setFocusable(true);
-        netSetting.setBackgroundResource(R.drawable.menu_focus_selector);
-        setNet.setOnClickListener(this);
-        setBluetooth.setOnClickListener(this);
-        netSetting.setOnKeyListener(this);
+        tvNetSetting.setFocusable(true);
+        tvNetSetting.setBackgroundResource(R.drawable.menu_focus_selector);
+        llSetNet.setOnClickListener(this);
+        llSetBluetooth.setOnClickListener(this);
+        tvNetSetting.setOnKeyListener(this);
 
         //測試了一下NetworkInformation類是否可用
         /*NetworkInformation information = new NetworkInformation(getApplicationContext());
@@ -42,8 +42,8 @@ public class NetSettingActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        setNet.setFocusable(true);
-        setBluetooth.setFocusable(true);
+        llSetNet.setFocusable(true);
+        llSetBluetooth.setFocusable(true);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class NetSettingActivity extends AppCompatActivity
         Intent intent;
         switch (v.getId()){
             case R.id.set_net:
-                intent = new Intent(NetSettingActivity.this, WireSettingActivity.class);
+                intent = new Intent(NetSettingActivity.this, EthernetSettingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.set_bluetooth:
@@ -75,8 +75,8 @@ public class NetSettingActivity extends AppCompatActivity
 
             switch (keyCode){
                 case KeyEvent.KEYCODE_DPAD_DOWN:
-                    setNet.setFocusable(false);
-                    setBluetooth.setFocusable(false);
+                    llSetNet.setFocusable(false);
+                    llSetBluetooth.setFocusable(false);
                     Intent intentDown = new Intent(NetSettingActivity.this, NetInfoActivity.class);
                     NetSettingActivity.this.startActivity(intentDown);
                     break;

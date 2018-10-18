@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eileen.boxsetting">
-
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -85,7 +85,7 @@
         <activity
             android:name=".NetSettingActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".WireSettingActivity" />
+        <activity android:name=".EthernetSettingActivity" />
         <activity android:name=".BluetoothSettingActivity" />
         <activity android:name=".NetInfoActivity" />
         <activity android:name=".PPPoEActivity" />

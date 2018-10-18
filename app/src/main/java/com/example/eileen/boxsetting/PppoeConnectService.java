@@ -19,21 +19,39 @@ public class PppoeConnectService extends Service {
     private PppoeConnectListener listener = new PppoeConnectListener() {
         @Override
         public void onProgress() {
+
+            Toast.makeText(
+                    PppoeConnectService.this,
+                    "正在连接，请稍后",
+                    Toast.LENGTH_SHORT
+            ).show();
+
             Log.d(TAG, "onProgress: ");
         }
 
         @Override
         public void onSuccess() {
             Log.d(TAG, "onSuccess: ");
+            Toast.makeText(
+                    PppoeConnectService.this,
+                    "连接成功",
+                    Toast.LENGTH_SHORT
+            ).show();
         }
 
         @Override
         public void onFail() {
+            Toast.makeText(
+                    PppoeConnectService.this,
+                    "连接失败",
+                    Toast.LENGTH_SHORT
+            ).show();
             Log.d(TAG, "onFail: ");
         }
 
         @Override
         public void onCancel() {
+
             Log.d(TAG, "onCancel: ");
         }
     };
