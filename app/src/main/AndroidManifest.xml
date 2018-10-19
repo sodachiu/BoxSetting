@@ -101,7 +101,8 @@
             android:theme="@style/dialogStyle" />
         <activity android:name=".ResFactoryDialogActivity"
             android:theme="@style/dialogStyle"/>
-        <activity android:name=".ResolutionDialogActivity" />
+        <activity android:name=".ResolutionDialogActivity"
+            android:theme="@style/dialogStyle" />
         <activity android:name=".AdvancedActivity" />
         <activity android:name=".ResFactoryActivity" />
         <activity android:name=".AdvancedItemActivity" />

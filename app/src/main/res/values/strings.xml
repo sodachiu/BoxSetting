@@ -78,7 +78,7 @@
     <string name="change_image_position">改变图像位置</string>
     <string name="adjust_screen_output_region">调整画面输出区域</string>
     <string name="adjust_region_prompt_text">请按上/下/左/右键调整画面输出区域，按返回键退出（注：请确保边框在可见区域内）</string>
-
+    <string name="resolution_change_prompt_info">确认是否切换到该制式？</string>
 
     <!--######################存储信息下的所有单一使用的文本信息#########################-->
     <string name="total_capacity">总容量</string>
