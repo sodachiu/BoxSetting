@@ -50,10 +50,10 @@ public class ResolutionAdapter extends RecyclerView.Adapter<ResolutionAdapter.Vi
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 Resolution resolution = mResolutionList.get(position);
-                Log.d(TAG, "onClick: " + resolution);
+//                Log.d(TAG, "onClick: " + resolution);
                 Toast.makeText(v.getContext(), resolution.getName(), Toast.LENGTH_SHORT).show();
                 Activity activity = (Activity) view.getContext();
-                Log.d(TAG, "onClick: " + activity);
+//                Log.d(TAG, "onClick: " + activity);
                 Intent intent = new Intent(activity, ResolutionDialogActivity.class);
                 intent.putExtra("click_item_id", resolution.getId());
                 activity.startActivityForResult(intent, ResolutionActivity.RESOLUTION_ACTIVITY);

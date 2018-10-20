@@ -33,13 +33,6 @@ public class ResolutionActivity extends AppCompatActivity {
         setContentView(R.layout.resolution_activity);
         tvMenuItem = (TextView) findViewById(R.id.display);
         tvMenuItem.setBackgroundResource(R.drawable.menu_item_select);
-
-
-
-    }
-
-    protected void onResume(){
-        super.onResume();
         Context context = getApplicationContext();
         displayManager = (DisplayManager)context.getSystemService(
                 Context.DISPLAY_MANAGER_SERVICE);
@@ -51,7 +44,15 @@ public class ResolutionActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new ResolutionAdapter(mResolutionList);
         mRecyclerView.setAdapter(mAdapter);
-        Log.d(TAG, "onResume: onresume");
+
+
+
+    }
+
+    protected void onResume(){
+        super.onResume();
+
+//        Log.d(TAG, "onResume: onresume");
 
     }
 
@@ -240,20 +241,12 @@ public class ResolutionActivity extends AppCompatActivity {
         switch (requestCode){
             case RESOLUTION_ACTIVITY:
                 if (RESULT_OK == resultCode){
-
+                    int oldStandardId = mCurrentStandardId;
                     mCurrentStandardId = data.getIntExtra("click_item_id", -1);
-                    if (mCurrentStandardId == -1){
-                        return;
-                    }
-                    Log.d(TAG, "onActivityResult: " + mCurrentStandardId);
-                    Resolution currentResolution = mResolutionList.get(mCurrentStandardId-1);
-                    currentResolution.setIschecked(true);
-                    initResolutions();
-                    mAdapter = new ResolutionAdapter(mResolutionList);
-                    mRecyclerView.setAdapter(mAdapter);
-                    //startThread();
 
-                    displayManager.setDisplayStandard(mCurrentStandardId);
+                    setDisplayStandard(oldStandardId);
+
+
                 }
                 break;
             default:
@@ -261,22 +254,31 @@ public class ResolutionActivity extends AppCompatActivity {
         }
     }
 
-   /*public void startThread(){
-
-       new Thread(new Runnable() {
-           @Override
-           public void run() {
 
 
-               initResolutions();
-               mRecyclerView.setAdapter(mAdapter);
-           }
-       }).start();
+public void setDisplayStandard(int oldStandardId){
 
-   }*/
+    int resolutionCount = mResolutionList.size();
+    int oldStandardPosition = 0;
+    int nowStandardPosition = 0;
+    displayManager.setDisplayStandard(mCurrentStandardId);
+    for (int i = 0; i < resolutionCount - 1; i++){
+        Resolution tempResolution = mResolutionList.get(i);
+        if (tempResolution.getId() == oldStandardId){
+            oldStandardPosition = i;
+            mResolutionList.get(i).setIschecked(false);
+        }
 
+        if (tempResolution.getId() == mCurrentStandardId){
+            nowStandardPosition = i;
+            mResolutionList.get(i).setIschecked(true);
+        }
 
+        mAdapter.notifyItemChanged(oldStandardPosition);
+        mAdapter.notifyItemChanged(nowStandardPosition);
+    }
 
+}
 
 
 }
