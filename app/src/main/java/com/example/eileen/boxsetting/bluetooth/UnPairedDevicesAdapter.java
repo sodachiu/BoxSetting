@@ -41,7 +41,7 @@ public class UnPairedDevicesAdapter extends RecyclerView.Adapter<UnPairedDevices
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        BluetoothDevice device = mBoundDevicesList.get(position);
+        BluetoothDevice device = mBoundDevicesList.get(position).get(Constent.ListDeviceInfo);
         if (device.getName() != null && !device.getName().equals("")){
             holder.tvDeviceName.setText(device.getName());
         }else {

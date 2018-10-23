@@ -28,7 +28,9 @@
             <LinearLayout
                 style="@style/LayoutStyle"
                 android:focusable="true"
-                android:id="@+id/bluetooth_ll_switch_status">
+                android:id="@+id/bluetooth_ll_switch_status"
+                android:nextFocusDown="@id/bluetooth_rv_paired_list"
+                android:descendantFocusability="beforeDescendants">
 
                 <TextView
                     style="@style/LayoutTagStyle"
@@ -41,7 +43,8 @@
                     android:layout_width="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/checkbox_off"
-                    android:id="@+id/bluetooth_btn_status"/>
+                    android:id="@+id/bluetooth_btn_status"
+                    android:focusable="false"/>
                 <!--此处给ImageView设定了初始图片，在代码中要改成动态设置-->
                 <TextView
                     style="@style/LayoutContentStyle"
@@ -52,6 +55,7 @@
                 android:text="@string/bound"
                 style="@style/TitleStyle"
                 android:paddingLeft="40dp"
+                android:focusable="false"
                 android:background="@drawable/background_title"/>
 
 
@@ -59,21 +63,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:paddingLeft="60dp"
-                android:id="@+id/bluetooth_rv_paired_list">
-            </android.support.v7.widget.RecyclerView>
+                android:id="@+id/bluetooth_rv_paired_list"
+                android:nextFocusDown="@id/bluetooth_rv_unpaired_list"
+                android:nextFocusUp="@id/bluetooth_ll_switch_status"/>
+
 
             <TextView
                 android:text="@string/unbind"
                 style="@style/TitleStyle"
                 android:paddingLeft="40dp"
                 android:background="@drawable/background_title"/>
+
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingLeft="60dp"
-                android:id="@+id/bluetooth_rv_unpaired_list">
+                android:id="@+id/bluetooth_rv_unpaired_list"
+                android:nextFocusUp="@id/bluetooth_rv_unpaired_list"/>
 
-            </android.support.v7.widget.RecyclerView>
         </LinearLayout>
 
     </LinearLayout>

@@ -40,6 +40,8 @@ public class ResolutionDialogActivity extends Activity
                 setResult(RESULT_CANCELED, intent);
                 finish();
                 break;
+            default:
+                break;
         }
     }
 }

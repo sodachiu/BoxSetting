@@ -1,13 +1,18 @@
 package com.example.eileen.boxsetting.bluetooth;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.eileen.boxsetting.BluetoothDisconnectDialog;
 import com.example.eileen.boxsetting.R;
+import com.example.eileen.boxsetting.ResolutionDialogActivity;
+import com.example.eileen.boxsetting.Utils.ActivityId;
 
 import java.util.List;
 import java.util.Map;
@@ -33,9 +38,33 @@ public class PairedDevicesAdapter extends RecyclerView.Adapter<PairedDevicesAdap
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext())
+        final View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.bluetooth_paired_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+
+        view.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                BluetoothDevice tmpDevice = mBoundDevicesList.get(position)
+                        .get(Constent.ListDeviceInfo);
+                Activity activity = (Activity) view.getContext();
+                String deviceInfo;
+                Intent intent = new Intent(activity, BluetoothDisconnectDialog.class);
+                Constent.LOGI(intent + "");
+                if (tmpDevice.getName() == null || tmpDevice.getName().equals("")){
+                    deviceInfo = tmpDevice.getAddress();
+                }else {
+                    deviceInfo = tmpDevice.getName();
+                }
+                Constent.LOGI(deviceInfo);
+                Constent.LOGI(position + "");
+                intent.putExtra("device_info", deviceInfo);
+                intent.putExtra("device_position", position);
+                activity.startActivityForResult(intent, ActivityId.BLUETOOTH_ACTIVITY);
+            }
+        });
         return holder;
     }
 
