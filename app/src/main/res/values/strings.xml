@@ -48,6 +48,7 @@
     <string name="static_ip_title">有线静态</string>
     <string name="set_bluetooth">设置蓝牙</string>
     <string name="bluetooth_status">蓝牙开关</string>
+    <string name="paired">已配对</string>
     <string name="bound">已绑定</string>
     <string name="unbind">未绑定</string>
 

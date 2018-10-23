@@ -60,7 +60,7 @@ public class NetSettingActivity extends AppCompatActivity
                 startActivity(intent);
                 break;
             case R.id.set_bluetooth:
-                intent = new Intent(NetSettingActivity.this, BluetoothSettingActivity.class);
+                intent = new Intent(NetSettingActivity.this, BluetoothActivity.class);
                 startActivity(intent);
                 break;
 

@@ -58,15 +58,6 @@ public class EthernetSettingActivity extends AppCompatActivity implements View.O
 
 
                 Log.d(TAG, "onClick: " + ethernetManager.isEthernetConfigured());
-                /*ethernetManager.setEthernetEnabled(true);
-                if (ethernetManager.getEthernetState() == EthernetManager.ETHERNET_STATE_ENABLED){
-                    tvDhcpState.setText(R.string.connected);
-                }
-
-                Log.d(TAG, "onClick: " + ethernetManager.isEthernetConfigured());*/
-                /*if (ethernetManager.getEthernetState() == EthernetManager.ETHERNET_STATE_ENABLED){
-                    
-                }*/
                 break;
             case R.id.static_ip_container:
                 intent = new Intent(EthernetSettingActivity.this, StaticIpActivity.class);
