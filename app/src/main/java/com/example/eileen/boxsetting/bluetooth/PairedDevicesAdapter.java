@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class PairedDevicesAdapter extends RecyclerView.Adapter<PairedDevicesAdapter.ViewHolder> {
 
-    private List<Map<String, BluetoothDevice>> mBoundDevicesList;
+    private List<BluetoothDevice> mBoundDevicesList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvDeviceName;
@@ -32,7 +32,7 @@ public class PairedDevicesAdapter extends RecyclerView.Adapter<PairedDevicesAdap
         }
     }
 
-    public PairedDevicesAdapter(List<Map<String, BluetoothDevice>> bluetoothDevicesList){
+    public PairedDevicesAdapter(List<BluetoothDevice> bluetoothDevicesList){
         this.mBoundDevicesList = bluetoothDevicesList;
     }
 
@@ -47,8 +47,7 @@ public class PairedDevicesAdapter extends RecyclerView.Adapter<PairedDevicesAdap
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                BluetoothDevice tmpDevice = mBoundDevicesList.get(position)
-                        .get(Constent.ListDeviceInfo);
+                BluetoothDevice tmpDevice = mBoundDevicesList.get(position);
                 Activity activity = (Activity) view.getContext();
                 String deviceInfo;
                 Intent intent = new Intent(activity, BluetoothDisconnectDialog.class);
@@ -70,7 +69,7 @@ public class PairedDevicesAdapter extends RecyclerView.Adapter<PairedDevicesAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        BluetoothDevice device = mBoundDevicesList.get(position).get(Constent.ListDeviceInfo);
+        BluetoothDevice device = mBoundDevicesList.get(position);
         if (device.getName() != null && !device.getName().equals("")){
             holder.tvDeviceName.setText(device.getName());
         }else {

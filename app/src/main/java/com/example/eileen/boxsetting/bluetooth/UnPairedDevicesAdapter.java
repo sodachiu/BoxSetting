@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class UnPairedDevicesAdapter extends RecyclerView.Adapter<UnPairedDevicesAdapter.ViewHolder> {
 
-    private List<Map<String, BluetoothDevice>> mBoundDevicesList;
+    private List<BluetoothDevice> mBoundDevicesList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvDeviceName;
@@ -27,7 +27,7 @@ public class UnPairedDevicesAdapter extends RecyclerView.Adapter<UnPairedDevices
         }
     }
 
-    public UnPairedDevicesAdapter(List<Map<String, BluetoothDevice>> bluetoothDevicesList){
+    public UnPairedDevicesAdapter(List<BluetoothDevice> bluetoothDevicesList){
         this.mBoundDevicesList = bluetoothDevicesList;
     }
 
@@ -41,7 +41,7 @@ public class UnPairedDevicesAdapter extends RecyclerView.Adapter<UnPairedDevices
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
-        BluetoothDevice device = mBoundDevicesList.get(position).get(Constent.ListDeviceInfo);
+        BluetoothDevice device = mBoundDevicesList.get(position);
         if (device.getName() != null && !device.getName().equals("")){
             holder.tvDeviceName.setText(device.getName());
         }else {
