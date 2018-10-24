@@ -51,14 +51,12 @@ public class PairedDevicesAdapter extends RecyclerView.Adapter<PairedDevicesAdap
                 Activity activity = (Activity) view.getContext();
                 String deviceInfo;
                 Intent intent = new Intent(activity, BluetoothDisconnectDialog.class);
-                Constent.LOGI(intent + "");
                 if (tmpDevice.getName() == null || tmpDevice.getName().equals("")){
                     deviceInfo = tmpDevice.getAddress();
                 }else {
                     deviceInfo = tmpDevice.getName();
                 }
-                Constent.LOGI(deviceInfo);
-                Constent.LOGI(position + "");
+
                 intent.putExtra("device_info", deviceInfo);
                 intent.putExtra("device_position", position);
                 activity.startActivityForResult(intent, ActivityId.BLUETOOTH_ACTIVITY);

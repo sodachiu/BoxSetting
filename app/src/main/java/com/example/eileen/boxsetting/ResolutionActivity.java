@@ -225,9 +225,6 @@ public class ResolutionActivity extends AppCompatActivity {
                     break;
                 default:
                     break;
-
-
-
             }
 
         }

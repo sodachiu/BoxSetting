@@ -98,7 +98,7 @@
         <activity android:name=".OutputRegionActivity" />
         <activity android:name=".StoreInfoActivity" />
         <activity
-            android:name=".DevDialogActivity"
+            android:name=".StoreInfo.UninstallDialog"
             android:theme="@style/dialogStyle" />
         <activity
             android:name=".ResFactoryDialogActivity"
@@ -112,10 +112,11 @@
         <activity android:name=".ClearAllActivity" />
         <activity
             android:name=".BluetoothDisconnectDialog"
-            android:theme="@style/dialogStyle"/>
+            android:theme="@style/dialogStyle" />
 
         <service android:name=".PppoeConnectService" />
 
+        <activity android:name=".Utils.BluetoothBondDialog"></activity>
     </application>
 
 </manifest>

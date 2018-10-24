@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.eileen.boxsetting.bluetooth.Constent;
+import com.example.eileen.boxsetting.bluetooth.BluetoothLog;
 
 public class BluetoothDisconnectDialog extends Activity
         implements View.OnClickListener{
@@ -21,9 +21,9 @@ public class BluetoothDisconnectDialog extends Activity
         Intent intent = getIntent();
         mDeviceInfo = intent.getStringExtra("device_info");
         mPosition = intent.getIntExtra("device_position", -1);
-        Constent.LOGI("dialog" + mDeviceInfo);
-        Constent.LOGI("dialog position" + mPosition);
-        Constent.LOGI("hello");
+        BluetoothLog.LOGI("dialog" + mDeviceInfo);
+        BluetoothLog.LOGI("dialog position" + mPosition);
+        BluetoothLog.LOGI("hello");
         TextView tvPromptInfo = (TextView) findViewById(R.id.bluetooth_disconnect_prompt_info);
         Button btnConfirm = (Button) findViewById(R.id.bluetooth_btn_disconnect_confirm);
         Button btnCancel = (Button) findViewById(R.id.bluetooth_btn_disconnect_cancel);

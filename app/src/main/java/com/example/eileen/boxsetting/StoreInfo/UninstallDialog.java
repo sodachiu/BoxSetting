@@ -1,11 +1,13 @@
-package com.example.eileen.boxsetting;
+package com.example.eileen.boxsetting.StoreInfo;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class DevDialogActivity extends Activity
+import com.example.eileen.boxsetting.R;
+
+public class UninstallDialog extends Activity
         implements View.OnClickListener{
     private Button confirm;
     private Button cancel;

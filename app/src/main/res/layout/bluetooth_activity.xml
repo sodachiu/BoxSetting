@@ -29,7 +29,6 @@
                 style="@style/LayoutStyle"
                 android:focusable="true"
                 android:id="@+id/bluetooth_ll_switch_status"
-                android:nextFocusDown="@id/bluetooth_rv_paired_list"
                 android:descendantFocusability="beforeDescendants">
 
                 <TextView
@@ -63,9 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:paddingLeft="60dp"
-                android:id="@+id/bluetooth_rv_paired_list"
-                android:nextFocusDown="@id/bluetooth_rv_unpaired_list"
-                android:nextFocusUp="@id/bluetooth_ll_switch_status"/>
+                android:id="@+id/bluetooth_rv_paired_list" />
 
 
             <TextView
@@ -78,8 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingLeft="60dp"
-                android:id="@+id/bluetooth_rv_unpaired_list"
-                android:nextFocusUp="@id/bluetooth_rv_unpaired_list"/>
+                android:id="@+id/bluetooth_rv_unpaired_list" />
 
         </LinearLayout>
 

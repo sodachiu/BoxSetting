@@ -38,13 +38,13 @@
                     android:layout_weight="1.5"
                     android:gravity="start|center_vertical"
                     android:text=""
-                    android:id="@+id/total_space"/>
+                    android:id="@+id/store_tv_total"/>
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="5"
                     android:gravity="start|center_vertical"
                     android:text=""
-                    android:id="@+id/store_dev_num"/>
+                    android:id="@+id/store_tv_device_count1"/>
 
             </LinearLayout>
             <ImageView
@@ -65,12 +65,13 @@
                     android:layout_weight="1.5"
                     android:gravity="start|center_vertical"
                     android:text=""
-                    android:id="@+id/alternative_space"/>
+                    android:id="@+id/store_tv_alternative"/>
                 <TextView
                     style="@style/LayoutTagStyle"
                     android:layout_weight="5"
                     android:gravity="start|center_vertical"
-                    android:text="" />
+                    android:text=""
+                    android:id="@+id/store_tv_devices_count2"/>
 
             </LinearLayout>
             <ImageView
