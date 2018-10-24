@@ -10,9 +10,9 @@ public class StorageUtils {
     public static boolean fileIsExists(String path) {
         try {
             File f = new File(path);
-            StoreInfoLog.LOGI("f path >>>" + f.getAbsolutePath());
+            StorageLog.LOGI("f path >>>" + f.getAbsolutePath());
             if (!f.exists()) {
-                StoreInfoLog.LOGI("文件夹不存在" );
+                StorageLog.LOGI("文件夹不存在" );
 
                 return false;
             }

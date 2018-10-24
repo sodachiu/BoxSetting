@@ -4,8 +4,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.storage.OnObbStateChangeListener;
-import android.os.storage.StorageManager;
+import android.os.IBinder;
+import android.os.ServiceManager;
+import android.os.storage.IMountService;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Formatter;
@@ -15,14 +16,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eileen.boxsetting.StoreInfo.MyMountService;
 import com.example.eileen.boxsetting.StoreInfo.StorageUtils;
-import com.example.eileen.boxsetting.StoreInfo.StoreInfoLog;
+import com.example.eileen.boxsetting.StoreInfo.StorageLog;
 import com.example.eileen.boxsetting.StoreInfo.UninstallDialog;
 import com.example.eileen.boxsetting.Utils.ActivityId;
 
+import static com.android.internal.content.PackageHelper.getMountService;
 
 
-public class StoreInfoActivity extends AppCompatActivity
+public class StorageActivity extends AppCompatActivity
         implements View.OnKeyListener, View.OnClickListener{
 
     private TextView tvMenu;
@@ -40,17 +43,19 @@ public class StoreInfoActivity extends AppCompatActivity
     private static final String MEDIA_UNMOUNTED = "android.intent.action.MEDIA_UNMOUNTED";
     private static final String PATH1 = "/mnt/sda/sda1";
     private static final String PATH2 = "/mnt/sda/sdb1";
+    private static boolean path1Exists = false;
+    private static boolean path2Exists = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.store_info_activity);
+        setContentView(R.layout.storage_activity);
         tvMenu = (TextView) findViewById(R.id.store_info);
-        llUninstall = (LinearLayout) findViewById(R.id.uninstall_out_store_dev);
-        tvTotal = (TextView) findViewById(R.id.store_tv_total);
-        tvTotalDevices1 = (TextView) findViewById(R.id.store_tv_device_count1);
-        tvAlt = (TextView) findViewById(R.id.store_tv_alternative);
-        tvTotalDevices2 = (TextView) findViewById(R.id.store_tv_devices_count2);
+        llUninstall = (LinearLayout) findViewById(R.id.storage_unmount);
+        tvTotal = (TextView) findViewById(R.id.storage_tv_total);
+        tvTotalDevices1 = (TextView) findViewById(R.id.storage_tv_devices_count1);
+        tvAlt = (TextView) findViewById(R.id.storage_tv_available);
+        tvTotalDevices2 = (TextView) findViewById(R.id.storage_tv_devices_count2);
         mContext = getApplicationContext();
 
 
@@ -89,42 +94,50 @@ public class StoreInfoActivity extends AppCompatActivity
         if (requestCode != ActivityId.STORE_INFO_ACTIVITY){
             Toast.makeText(mContext, "存储信息位置返回的值不对", Toast.LENGTH_SHORT).show();
         }else {
-            StoreInfoLog.LOGI("我进来了吗");
+            StorageLog.LOGI("我进来了吗");
             switch (resultCode){
                 case RESULT_OK:
-                    StorageManager sm = (StorageManager) mContext.getSystemService(STORAGE_SERVICE);
-                    try {
-                        boolean path1IsExist = sm.isObbMounted(PATH1);
-                        boolean path2IsExist = sm.isObbMounted(PATH2);
+                    IMountService mountService;
+                    IBinder service = ServiceManager.getService("mount");
 
-                        if (path1IsExist){
-                            sm.unmountObb(PATH1, true, new OnObbStateChangeListener() {
-                                @Override
-                                public void onObbStateChange(String path, int state) {
-                                    super.onObbStateChange(path, state);
-                                }
-                            });
-                        }
-                        if (path2IsExist){
-                            sm.unmountObb(PATH2, true, new OnObbStateChangeListener() {
-                                @Override
-                                public void onObbStateChange(String path, int state) {
-                                    super.onObbStateChange(path, state);
-                                }
-                            });
-                        }
-                       /* String keyCommand = "rm -rf /mnt/sda/*";
-                        Runtime runtime = Runtime.getRuntime();
-                        Process proc = runtime.exec(keyCommand);*/
-                        StoreInfoLog.LOGI("卸载成功");
-
-                    }catch (Exception e){
-                        StoreInfoLog.LOGI("卸载命令失败");
-                        StoreInfoLog.LOGI(e.getMessage());
+                    if (service != null){
+                        mountService = IMountService.Stub.asInterface(service);
+                    }else {
+                        StorageLog.LOGI("获取服务失败");
+                        return;
                     }
+
+                    if (mountService == null){
+                        StorageLog.LOGI("没有获取到挂载服务");
+                        return;
+                    }
+
+
+                    if (path1Exists){
+                        try {
+                            mountService.unmountVolume(PATH1, true, false);
+                            StorageLog.LOGI("卸载设备1成功");
+
+                        }catch (Exception e){
+                            StorageLog.LOGI("卸载设备1失败");
+                            StorageLog.LOGI(e.getMessage());
+                        }
+                    }
+
+                    if (path2Exists){
+                        try {
+                            mountService.unmountVolume(PATH2, true, false);
+                            StorageLog.LOGI("卸载设备2成功");
+
+                        }catch (Exception e){
+                            StorageLog.LOGI("卸载设备2失败");
+                            StorageLog.LOGI(e.getMessage());
+                        }
+                    }
+
                     break;
                 case RESULT_CANCELED:
-                    StoreInfoLog.LOGI("取消卸载操作");
+                    StorageLog.LOGI("取消卸载操作");
                     break;
                 default:
                     break;
@@ -141,9 +154,11 @@ public class StoreInfoActivity extends AppCompatActivity
         }
     }
 
+
+
     @Override
     public void onClick(View v){
-        Intent intent = new Intent(StoreInfoActivity.this, UninstallDialog.class);
+        Intent intent = new Intent(StorageActivity.this, UninstallDialog.class);
         startActivityForResult(intent, ActivityId.STORE_INFO_ACTIVITY);
     }
 
@@ -154,12 +169,12 @@ public class StoreInfoActivity extends AppCompatActivity
             Intent intent;
             switch (keyCode){
                 case KeyEvent.KEYCODE_DPAD_DOWN:
-                    intent = new Intent(StoreInfoActivity.this, AdvancedActivity.class);
+                    intent = new Intent(StorageActivity.this, AdvancedActivity.class);
                     startActivity(intent);
                     break;
                 case KeyEvent.KEYCODE_DPAD_UP:
                     llUninstall.setFocusable(false);
-                    intent = new Intent(StoreInfoActivity.this, DisplayActivity.class);
+                    intent = new Intent(StorageActivity.this, DisplayActivity.class);
                     startActivity(intent);
                     break;
                 default:
@@ -174,8 +189,8 @@ public class StoreInfoActivity extends AppCompatActivity
         long totalSize = 0;
         long availableSize = 0;
 
-        boolean path1Exists = StorageUtils.fileIsExists(PATH1);
-        boolean path2Exists = StorageUtils.fileIsExists(PATH2);
+        path1Exists = StorageUtils.fileIsExists(PATH1);
+        path2Exists = StorageUtils.fileIsExists(PATH2);
 
 
         totalSize += StorageUtils.getRomTotalSize();

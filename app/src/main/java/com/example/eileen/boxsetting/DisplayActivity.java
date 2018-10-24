@@ -69,7 +69,7 @@ public class DisplayActivity extends AppCompatActivity
         if (event.getAction() == KeyEvent.ACTION_DOWN){
             switch (keyCode){
                 case KeyEvent.KEYCODE_DPAD_DOWN:
-                    intent = new Intent(DisplayActivity.this, StoreInfoActivity.class);
+                    intent = new Intent(DisplayActivity.this, StorageActivity.class);
                     startActivity(intent);
                     break;
                 case KeyEvent.KEYCODE_DPAD_UP:

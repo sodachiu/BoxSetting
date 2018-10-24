@@ -96,7 +96,7 @@
         <activity android:name=".DisplayActivity" />
         <activity android:name=".ResolutionActivity" />
         <activity android:name=".OutputRegionActivity" />
-        <activity android:name=".StoreInfoActivity" />
+        <activity android:name=".StorageActivity" />
         <activity
             android:name=".StoreInfo.UninstallDialog"
             android:theme="@style/dialogStyle" />

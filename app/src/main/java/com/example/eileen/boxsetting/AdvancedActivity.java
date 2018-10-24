@@ -84,7 +84,7 @@ public class AdvancedActivity extends AppCompatActivity
                     break;
                 case KeyEvent.KEYCODE_DPAD_UP:
                     mEtPassword.setFocusable(false);
-                    intent = new Intent(AdvancedActivity.this, StoreInfoActivity.class);
+                    intent = new Intent(AdvancedActivity.this, StorageActivity.class);
                     startActivity(intent);
                     break;
                 default:
