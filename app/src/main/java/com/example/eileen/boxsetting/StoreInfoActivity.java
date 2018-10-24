@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.storage.OnObbStateChangeListener;
+import android.os.storage.StorageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.Formatter;
@@ -11,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.eileen.boxsetting.StoreInfo.StorageUtils;
 import com.example.eileen.boxsetting.StoreInfo.StoreInfoLog;
@@ -35,8 +38,8 @@ public class StoreInfoActivity extends AppCompatActivity
     private static final String MEDIA_EJECT = "android.intent.action.MEDIA_EJECT";
     private static final String MEDIA_MOUNTED = "android.intent.action.MEDIA_MOUNTED";
     private static final String MEDIA_UNMOUNTED = "android.intent.action.MEDIA_UNMOUNTED";
-
-
+    private static final String PATH1 = "/mnt/sda/sda1";
+    private static final String PATH2 = "/mnt/sda/sdb1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +86,50 @@ public class StoreInfoActivity extends AppCompatActivity
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        ReturnDataUtil.disposeOfData(requestCode, resultCode, data);
+        if (requestCode != ActivityId.STORE_INFO_ACTIVITY){
+            Toast.makeText(mContext, "存储信息位置返回的值不对", Toast.LENGTH_SHORT).show();
+        }else {
+            StoreInfoLog.LOGI("我进来了吗");
+            switch (resultCode){
+                case RESULT_OK:
+                    StorageManager sm = (StorageManager) mContext.getSystemService(STORAGE_SERVICE);
+                    try {
+                        boolean path1IsExist = sm.isObbMounted(PATH1);
+                        boolean path2IsExist = sm.isObbMounted(PATH2);
+
+                        if (path1IsExist){
+                            sm.unmountObb(PATH1, true, new OnObbStateChangeListener() {
+                                @Override
+                                public void onObbStateChange(String path, int state) {
+                                    super.onObbStateChange(path, state);
+                                }
+                            });
+                        }
+                        if (path2IsExist){
+                            sm.unmountObb(PATH2, true, new OnObbStateChangeListener() {
+                                @Override
+                                public void onObbStateChange(String path, int state) {
+                                    super.onObbStateChange(path, state);
+                                }
+                            });
+                        }
+                       /* String keyCommand = "rm -rf /mnt/sda/*";
+                        Runtime runtime = Runtime.getRuntime();
+                        Process proc = runtime.exec(keyCommand);*/
+                        StoreInfoLog.LOGI("卸载成功");
+
+                    }catch (Exception e){
+                        StoreInfoLog.LOGI("卸载命令失败");
+                        StoreInfoLog.LOGI(e.getMessage());
+                    }
+                    break;
+                case RESULT_CANCELED:
+                    StoreInfoLog.LOGI("取消卸载操作");
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     class MediaReceiver extends BroadcastReceiver{
@@ -124,40 +170,27 @@ public class StoreInfoActivity extends AppCompatActivity
     }
 
     public void refreshView(){
-        int devCount = 0;
+        int devCount = 1;
         long totalSize = 0;
         long availableSize = 0;
-        String path1 = "/mnt/sda/sda1";
-        String path2 = "/mnt/sdb/sdb1";
-        String path3 = "/mnt/sdc/sdc1";
-        String path4 = "/mnt/sdd/sdd1";
-        boolean path1Exists = StorageUtils.fileIsExists(path1);
-        boolean path2Exists = StorageUtils.fileIsExists(path2);
-        boolean path3Exists = StorageUtils.fileIsExists(path3);
-        boolean path4Exists = StorageUtils.fileIsExists(path4);
+
+        boolean path1Exists = StorageUtils.fileIsExists(PATH1);
+        boolean path2Exists = StorageUtils.fileIsExists(PATH2);
+
 
         totalSize += StorageUtils.getRomTotalSize();
         availableSize += StorageUtils.getRomAvailableSize();
         if(path1Exists){
             ++devCount;
-            totalSize += StorageUtils.getExternalTotalSize(path1);
-            availableSize += StorageUtils.getExternalAvailableSize(path1);
+            totalSize += StorageUtils.getExternalTotalSize(PATH1);
+            availableSize += StorageUtils.getExternalAvailableSize(PATH1);
         }
         if (path2Exists){
             ++devCount;
-            totalSize += StorageUtils.getExternalTotalSize(path2);
-            availableSize += StorageUtils.getExternalAvailableSize(path2);
+            totalSize += StorageUtils.getExternalTotalSize(PATH2);
+            availableSize += StorageUtils.getExternalAvailableSize(PATH2);
         }
-        if (path3Exists){
-            ++devCount;
-            totalSize += StorageUtils.getExternalTotalSize(path3);
-            availableSize += StorageUtils.getExternalAvailableSize(path3);
-        }
-        if (path4Exists){
-            ++devCount;
-            totalSize += StorageUtils.getExternalTotalSize(path4);
-            availableSize += StorageUtils.getExternalAvailableSize(path4);
-        }
+
 
         String sTotalSize = Formatter.formatFileSize(mContext, totalSize);
         String sAvailableSize = Formatter.formatFileSize(mContext, availableSize);
