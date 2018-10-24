@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
             }
         }
 
+        Log.d("aaa", "尝试做以下");
         return false;
     }
 
